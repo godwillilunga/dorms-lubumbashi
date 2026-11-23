@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% set x = t.reglement_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ x.intro }}</p>{% endcall %}
+<section>
+  <div class="col">
+    <ul class="regles">
+      {% for r in x.regles %}<li><h2 class="h3">{{ r.titre }}</h2><p>{{ r.texte }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

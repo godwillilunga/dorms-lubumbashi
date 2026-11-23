@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% set x = t.prix_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ x.intro }}</p>{% endcall %}
+<section>
+  <div class="col">
+    <h2 style="margin-bottom:1rem">{{ x.tableau_titre }}</h2>
+    <div class="tableau-wrap">
+      <table class="grille-prix">
+        <thead><tr><th scope="col">{{ x.col_formule }}</th><th scope="col">{{ x.col_mois }}</th><th scope="col">{{ x.col_trimestre }}</th><th scope="col">{{ x.col_nuit }}</th></tr></thead>
+        <tbody>
+          {% for ty in s.types %}
+          <tr{% if ty.bientot %} class="futur"{% endif %}>
+            <td>{{ t.types[ty.id].nom }}{% if ty.bientot %} <span class="pastille">{{ t.ui.bientot }}</span>{% endif %}</td>
+            <td><b>{{ m.usd(ty.mois) }}</b></td>
+            <td>{{ m.usd(ty.trimestre) }}</td>
+            <td>{% if ty.nuit %}<b>{{ m.usd(ty.nuit) }}</b>{% else %}–{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="prix" id="calcul" aria-labelledby="t-calc">
+  <div class="col etroit">
+    <h2 id="t-calc" style="margin-bottom:1rem">{{ x.calc_titre }}</h2>
+    <form class="carte-blanche calc" data-calc novalidate>
+      <fieldset class="champ">
+        <legend>{{ x.calc_je_suis }}</legend>
+        <div class="choix">
+          <label><input type="radio" name="type" value="etudiant" checked> {{ x.calc_etudiant }}</label>
+          <label><input type="radio" name="type" value="voyageur"> {{ x.calc_voyageur }}</label>
+        </div>
+      </fieldset>
+      <div class="champs" data-si="etudiant">
+        <div class="champ"><label for="c-mois">{{ x.calc_mois }}</label>
+          <select id="c-mois" name="mois">{% for n in range(1, 13) %}<option value="{{ n }}"{% if n == 3 %} selected{% endif %}>{{ n }}</option>{% endfor %}</select></div>
+      </div>
+      <div class="champs" data-si="voyageur" hidden>
+        <div class="champ"><label for="c-arr">{{ x.calc_arrivee }}</label><input id="c-arr" name="arrivee" type="date"></div>
+        <div class="champ"><label for="c-dep">{{ x.calc_depart }}</label><input id="c-dep" name="depart" type="date"></div>
+      </div>
+      <p class="alerte" data-erreur hidden>{{ x.calc_dates_invalides }}</p>
+      <div class="total">
+        <div><span>{{ x.calc_total }}</span><small data-detail></small></div>
+        <output data-total>–</output>
+      </div>
+      <a class="btn btn-or" data-lien-resa href="{{ url('reserver') }}">{{ x.calc_reserver }}</a>
+    </form>
+  </div>
+</section>
+{% endblock %}

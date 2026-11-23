@@ -1,0 +1,33 @@
+# --- Sécurité : ces fichiers ne doivent JAMAIS être publiés (le dépôt est public) ---
+*.docx
+*.doc
+*.pdf
+*.xlsx
+*.xls
+*.heic
+*.HEIC
+*.mp4
+*.mov
+*contrat*
+*Contrat*
+*recu*
+*Recu*
+*Reçu*
+*facture*
+*Facture*
+*devis*
+*Devis*
+*.env
+.env*
+*service_role*
+# Photos originales : seules les versions converties de src/static/img/ sont publiées
+originaux/
+Dossier Logement/
+
+# --- Fichiers générés ---
+_site/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

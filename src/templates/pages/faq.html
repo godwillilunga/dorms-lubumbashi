@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block contenu %}
+{{ m.titre_page() }}
+<section>
+  <div class="col etroit faq">
+    {% for f in t.faq %}<details{% if loop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.r }}</p></details>{% endfor %}
+  </div>
+</section>
+{% include 'appel.html' %}
+{% endblock %}

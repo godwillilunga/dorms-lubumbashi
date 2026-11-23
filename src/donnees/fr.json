@@ -1,0 +1,232 @@
+{
+  "lang": "fr",
+  "locale": "fr_FR",
+  "accroche": "Vivre sereinement à Lubumbashi",
+
+  "pages": {
+    "accueil":     { "slug": "",            "nav": "Accueil",     "titre": "Dortoir et logement étudiant à Lubumbashi dès 80 $/mois | The Dorms", "description": "Dortoir meublé pour étudiants et voyageurs à Lubumbashi, Quartier Industriel : lit dès 80 $/mois ou 15 $/nuit, eau 24h/24, électricité permanente, Wi-Fi. Réservez en ligne." },
+    "chambres":    { "slug": "chambres",    "nav": "Chambres",    "titre": "Chambres et lits à louer à Lubumbashi | The Dorms", "description": "Chambres à louer à Lubumbashi : 2 chambres de 4 lits, meublées et propres, et 6 nouvelles chambres bientôt. Photos et lits libres en temps réel.", "h1": "Chambres et lits à louer à Lubumbashi" },
+    "equipements": { "slug": "equipements", "nav": "Équipements", "titre": "Équipements : Wi-Fi, eau de forage, électricité | The Dorms Lubumbashi", "description": "Tout est inclus aux Dorms Lubumbashi : lits avec draps, cuisine équipée, douche chaude, salon avec TV, Wi-Fi, eau de forage 24h/24, électricité permanente, parcelle gardée.", "h1": "Équipements et services inclus" },
+    "prix":        { "slug": "prix",        "nav": "Prix",        "titre": "Prix : hébergement pas cher à Lubumbashi, 80 $/mois ou 15 $/nuit | The Dorms", "description": "Hébergement pas cher à Lubumbashi : lit étudiant 80 $/mois (240 $ le trimestre), eau et électricité comprises, ou 15 $ la nuit pour les voyageurs. Calculez votre prix.", "h1": "Prix et calcul de votre séjour" },
+    "acces":       { "slug": "acces",       "nav": "Accès",       "titre": "Accès et plan : Quartier Industriel, Lubumbashi | The Dorms", "description": "The Dorms : 24, avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, sur la route de la British International School. Carte, itinéraire et distances.", "h1": "Comment venir aux Dorms" },
+    "reglement":   { "slug": "reglement",   "nav": "Règlement",   "titre": "Règlement intérieur | The Dorms Lubumbashi", "description": "Les règles de vie des Dorms Lubumbashi : calme de 22 h à 6 h, visites, propreté, sécurité. Un cadre serein pour étudier et se reposer.", "h1": "Règlement intérieur" },
+    "faq":         { "slug": "faq",         "nav": "FAQ",         "titre": "Questions fréquentes : dortoir et auberge à Lubumbashi | The Dorms", "description": "Réponses aux questions sur The Dorms Lubumbashi : prix, réservation, paiement Mobile Money, visites, sécurité, eau et électricité.", "h1": "Questions fréquentes" },
+    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact et WhatsApp | The Dorms Lubumbashi", "description": "Contactez The Dorms Lubumbashi par WhatsApp ou téléphone au +243 863 472 047. Ouvert 24h/24, visites sur rendez-vous.", "h1": "Nous contacter" },
+    "reserver":    { "slug": "reserver",    "nav": "Réserver",    "titre": "Réserver un lit à Lubumbashi | The Dorms", "description": "Demandez votre lit aux Dorms Lubumbashi en 2 minutes : choisissez vos dates ou vos mois, envoyez la demande, nous confirmons par WhatsApp.", "h1": "Demande de réservation" }
+  },
+
+  "ui": {
+    "menu": "Menu",
+    "fermer": "Fermer",
+    "langue_autre": "English",
+    "langue_code": "EN",
+    "reserver": "Réserver",
+    "reserver_lit": "Réserver un lit",
+    "ecrire_wa": "Écrire sur WhatsApp",
+    "wa_message": "Bonjour The Dorms, je voudrais des informations sur un lit.",
+    "appeler": "Appeler",
+    "des": "Dès",
+    "par_mois": "/ mois",
+    "par_lit_mois": "/ lit / mois",
+    "par_lit_nuit": "/ lit / nuit",
+    "par_chambre_mois": "/ chambre / mois",
+    "trimestre": "Par trimestre",
+    "nuit": "la nuit",
+    "bientot": "Bientôt",
+    "voir_photos": "Voir toutes les photos et les lits libres",
+    "voir_prix": "Voir les prix",
+    "photo": "Photo",
+    "precedente": "Photo précédente",
+    "suivante": "Photo suivante",
+    "carte_bouton": "Afficher la carte",
+    "carte_note": "La carte se charge seulement quand vous appuyez, pour économiser vos données.",
+    "itineraire": "Itinéraire Google Maps",
+    "video_bouton": "Lancer la visite vidéo",
+    "ouvert": "Ouvert 24h/24, 7j/7",
+    "tous_droits": "Tous droits réservés.",
+    "plan_site": "Plan du site",
+    "liens": "Liens",
+    "en_savoir_plus": "En savoir plus"
+  },
+
+  "types": {
+    "dortoir":      { "nom": "Lit en dortoir",          "court": "Dortoir (4 lits)" },
+    "double":       { "nom": "Lit en chambre double",   "court": "Chambre double" },
+    "individuelle": { "nom": "Chambre individuelle",    "court": "Chambre individuelle" }
+  },
+
+  "accueil": {
+    "h1": "Dortoir meublé pour étudiants et voyageurs à Lubumbashi",
+    "intro": "Des lits confortables dans une maison neuve, au calme du Quartier Industriel, près des universités. Eau de forage 24h/24, électricité permanente, Wi-Fi et personnel sur place jour et nuit.",
+    "faits": ["Dès 80 $ / mois", "15 $ la nuit", "8 lits · 2 chambres", "Personnel 24h/24"],
+    "prix_titre": "Un prix clair, eau et électricité comprises",
+    "prix_texte": "Vous envoyez une demande en ligne, nous confirmons par WhatsApp, puis vous payez sur place ou par Mobile Money.",
+    "etudiant_badge": "Étudiants",
+    "etudiant_pour": "Lit en dortoir, au mois",
+    "etudiant_points": ["Eau et électricité incluses", "Cuisine, salon et Wi-Fi partagés"],
+    "etudiant_bouton": "Demander un lit étudiant",
+    "voyageur_badge": "Voyageurs",
+    "voyageur_pour": "Lit en dortoir, à la nuit",
+    "voyageur_points": ["Draps et oreiller fournis", "Douche chaude, cuisine équipée", "Idéal pour un passage à Lubumbashi"],
+    "voyageur_bouton": "Choisir mes dates",
+    "bientot_titre": "Bientôt : nouvelle maison, 6 chambres",
+    "inclus_titre": "Tout est inclus dans le prix",
+    "photos_titre": "La maison en images",
+    "video_titre": "Faites le tour de la maison",
+    "video_texte": "La vidéo se charge seulement si vous appuyez dessus, pour économiser vos données mobiles.",
+    "acces_titre": "Au calme, près de tout",
+    "temoignages_titre": "Ils ont logé aux Dorms",
+    "appel_titre": "Un lit vous attend",
+    "appel_texte": "Envoyez une demande : nous vous répondons sur WhatsApp avec les détails."
+  },
+
+  "equipements": [
+    { "icone": "lit",      "titre": "Lits confortables",         "texte": "Matelas, draps et oreillers fournis." },
+    { "icone": "cuisine",  "titre": "Cuisine équipée",            "texte": "Cuisinière, réfrigérateur et ustensiles." },
+    { "icone": "douche",   "titre": "Douche chaude",              "texte": "Salle de bain avec chauffe-eau." },
+    { "icone": "tv",       "titre": "Salon avec télévision",      "texte": "Canapé et coin repas partagés." },
+    { "icone": "eau",      "titre": "Eau de forage 24h/24",       "texte": "Réservoir à remplissage automatique." },
+    { "icone": "courant",  "titre": "Électricité permanente",     "texte": "Pour étudier le soir sans coupure." },
+    { "icone": "wifi",     "titre": "Wi-Fi",                      "texte": "Internet inclus dans le prix." },
+    { "icone": "securite", "titre": "Parcelle clôturée et gardée","texte": "Mur solide, portail, personnel 24h/24." }
+  ],
+
+  "equipements_page": {
+    "intro": "Le prix comprend le lit, l'eau, l'électricité et l'accès à tous les espaces communs. Vous arrivez avec vos affaires, le reste est prêt.",
+    "blocs": [
+      { "titre": "Eau disponible en permanence", "texte": "Notre forage est équipé d'un système de remplissage automatique du réservoir. L'eau arrive 24h/24 dans toute la maison : toilettes, cuisine, chauffe-eau, et dans les 3 robinets de la parcelle.", "photo": "forage" },
+      { "titre": "Une cuisine pour cuisiner comme à la maison", "texte": "Cuisinière électrique, réfrigérateur, évier, plans de travail et ustensiles. Chacun range et nettoie après son repas.", "photo": "cuisine-2" },
+      { "titre": "Un salon pour se détendre", "texte": "Canapé, télévision et coin repas pour regarder un film, discuter ou réviser à plusieurs.", "photo": "salon-2" },
+      { "titre": "Sécurité et calme", "texte": "La parcelle est entourée d'un mur solide avec un portail. Deux agents sont présents sur place 24h/24 pour vous aider. Le quartier est calme et décent.", "photo": "cour" }
+    ]
+  },
+
+  "chambres_page": {
+    "intro": "La maison actuelle compte 2 chambres de 4 lits (lits superposés). Chaque résident a son lit, son oreiller et ses draps. Une nouvelle maison de 6 chambres est en construction sur la même parcelle.",
+    "maison-1": "Maison actuelle",
+    "maison-2": "Nouvelle maison",
+    "maison-2_texte": "6 chambres et 2 douches et 2 toilettes en plus.",
+    "lits": "lits",
+    "galerie_titre": "Photos",
+    "cats": { "tout": "Tout", "chambres": "Chambres", "salon": "Salon", "cuisine": "Cuisine", "douche": "Salle de bain", "exterieur": "Extérieur" },
+    "dispo_titre": "Lits libres",
+    "dispo_texte": "Choisissez un mois pour voir quels lits sont libres chaque jour.",
+    "dispo_libre": "Libre",
+    "dispo_pris": "Occupé",
+    "dispo_hors_ligne": "Le calendrier en direct arrive bientôt. En attendant, demandez les lits libres sur WhatsApp.",
+    "dispo_erreur": "Impossible de charger les disponibilités. Vérifiez votre connexion, ou écrivez-nous sur WhatsApp."
+  },
+
+  "prix_page": {
+    "intro": "Deux formules simples, eau et électricité comprises. Le paiement se fait seulement après notre confirmation, en espèces ou par Mobile Money (M-Pesa, Orange Money, Airtel Money).",
+    "tableau_titre": "Grille des prix",
+    "col_formule": "Formule",
+    "col_mois": "Par mois",
+    "col_trimestre": "Par trimestre",
+    "col_nuit": "Par nuit",
+    "calc_titre": "Calculez votre prix",
+    "calc_je_suis": "Je suis",
+    "calc_etudiant": "Étudiant (au mois)",
+    "calc_voyageur": "Voyageur (à la nuit)",
+    "calc_mois": "Nombre de mois",
+    "calc_arrivee": "Arrivée",
+    "calc_depart": "Départ",
+    "calc_total": "Total estimé",
+    "calc_detail_mois": "{n} mois × {p} $",
+    "calc_detail_nuits": "{n} nuit(s) × {p} $",
+    "calc_dates_invalides": "Choisissez une date de départ après la date d'arrivée.",
+    "calc_reserver": "Réserver avec ces choix"
+  },
+
+  "acces_page": {
+    "intro": "The Dorms se trouve dans le Quartier Industriel (commune de Kampemba), une zone calme proche des universités, des transports et des commerces.",
+    "adresse_titre": "Adresse",
+    "repere": "Repère : la route de la British International School",
+    "distances_titre": "Distances depuis les Dorms",
+    "venir_titre": "Pour venir",
+    "venir": [
+      "Prenez la route de la British International School, dans le Quartier Industriel.",
+      "Continuez sur l'avenue Mungunzi prolongée jusqu'au n° 24.",
+      "Perdu ? Appelez-nous ou envoyez votre position sur WhatsApp : nous vous guidons."
+    ]
+  },
+
+  "reglement_page": {
+    "intro": "Ces règles permettent à chacun d'étudier, de dormir et de vivre sereinement. Elles s'appliquent à tous les résidents et à leurs visiteurs, et sont signées à l'arrivée.",
+    "regles": [
+      { "titre": "Respect des autres", "texte": "Chacun respecte la personne, le sommeil, les études, la religion et les biens des autres. Les désaccords se règlent par le dialogue, puis auprès du responsable." },
+      { "titre": "Calme de 22 h à 6 h", "texte": "Silence, écouteurs obligatoires, appels à voix basse hors des chambres. En journée, le volume reste raisonnable, surtout en période d'examens." },
+      { "titre": "Visiteurs", "texte": "Visites de 6 h à 21 h, de préférence au salon, 2 visiteurs au maximum par résident. Dans une chambre seulement avec l'accord des colocataires présents." },
+      { "titre": "Nuitées des visiteurs", "texte": "Interdites sans autorisation préalable du responsable et accord des colocataires, 1 nuit par mois au maximum, jamais dans le lit d'un autre résident." },
+      { "titre": "Propreté", "texte": "Lit fait et affaires rangées chaque jour. Pas de nourriture ni de vaisselle dans les chambres. Salon, cuisine, toilette et salle de bain sont nettoyés selon le planning et laissés propres après usage." },
+      { "titre": "Déchets", "texte": "Dans les poubelles fermées prévues. Aucun déchet dans la cour ou la rue." },
+      { "titre": "Eau et électricité", "texte": "Fermer les robinets, éteindre lampes et appareils inutilisés. Appareils à forte consommation seulement avec autorisation. Aucun branchement sauvage." },
+      { "titre": "Sécurité", "texte": "Pas de cuisson ni de réchaud dans les chambres, pas de bougie sans surveillance, ne pas toucher aux installations électriques. Fermer portes et fenêtres." },
+      { "titre": "Clés et portail", "texte": "Les clés ne se prêtent pas et ne se copient pas. Le portail est fermé à clé de minuit à 5 h ; aucun résident n'est laissé dehors." },
+      { "titre": "Objets de valeur", "texte": "Gardez vos objets de valeur sous clé dans votre casier. Personne ne touche aux affaires d'un autre sans permission." },
+      { "titre": "Pas de sous-location", "texte": "Interdit de sous-louer, céder ou prêter sa place, même pour quelques jours, sans accord écrit." },
+      { "titre": "Dégradations", "texte": "Toute dégradation est signalée le jour même. Aucune réparation d'électricité ou de plomberie par un résident." },
+      { "titre": "Violence et substances illicites", "texte": "Violence, menaces, harcèlement et bizutage sont interdits, de même que les drogues. L'alcool, s'il est consommé, ne doit causer ni bruit ni trouble." },
+      { "titre": "Absences", "texte": "Toute absence de plus de 7 jours est signalée au responsable." }
+    ]
+  },
+
+  "faq": [
+    { "q": "Qui peut loger aux Dorms ?", "r": "Les étudiants, qui louent un lit au mois, et les voyageurs de passage à Lubumbashi, qui louent un lit à la nuit." },
+    { "q": "Combien coûte un lit ?", "r": "80 $ par mois pour les étudiants (240 $ le trimestre), eau et électricité comprises. 15 $ la nuit pour les voyageurs." },
+    { "q": "Qu'est-ce qui est inclus dans le prix ?", "r": "Le lit avec matelas, draps et oreiller, la cuisine équipée, la douche chaude, le salon avec télévision, le Wi-Fi, l'eau de forage 24h/24 et l'électricité." },
+    { "q": "Comment réserver ?", "r": "Remplissez le formulaire de réservation en choisissant vos dates ou vos mois. Nous vérifions et vous répondons sur WhatsApp avec les instructions de paiement. La place est confirmée après le paiement." },
+    { "q": "Comment payer ?", "r": "En espèces sur place, ou par M-Pesa, Orange Money ou Airtel Money, seulement après notre confirmation. Nous ne prenons jamais de paiement automatique en ligne." },
+    { "q": "Puis-je visiter avant de réserver ?", "r": "Oui, sur rendez-vous. Appelez-nous ou écrivez sur WhatsApp au +243 863 472 047." },
+    { "q": "Les chambres sont-elles partagées ?", "r": "Oui, chaque chambre de la maison actuelle a 4 lits (lits superposés). Des chambres doubles et individuelles arrivent bientôt dans la nouvelle maison." },
+    { "q": "Le logement est-il sécurisé ?", "r": "Oui. La parcelle est clôturée avec un mur solide et un portail, et deux agents sont présents sur place 24h/24." },
+    { "q": "Y a-t-il des coupures d'eau ou d'électricité ?", "r": "L'eau vient de notre forage avec un réservoir à remplissage automatique, disponible 24h/24. L'électricité est permanente." },
+    { "q": "Peut-on cuisiner ?", "r": "Oui, la cuisine équipée est partagée entre les résidents. Il est interdit de cuisiner dans les chambres." },
+    { "q": "Peut-on recevoir des visiteurs ?", "r": "Oui, de 6 h à 21 h, de préférence au salon, avec 2 visiteurs au maximum par résident. Les nuitées de visiteurs demandent une autorisation." },
+    { "q": "Où se trouvent les Dorms ?", "r": "Au 24, avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, sur la route de la British International School, près des universités." }
+  ],
+
+  "contact_page": {
+    "intro": "Le plus rapide : WhatsApp. Nous sommes joignables 24h/24 et les visites se font sur rendez-vous.",
+    "form_titre": "Envoyer un message",
+    "form_texte": "Votre message s'ouvre dans WhatsApp, prêt à envoyer.",
+    "nom": "Votre nom",
+    "message": "Votre message",
+    "envoyer": "Ouvrir dans WhatsApp"
+  },
+
+  "reserver_page": {
+    "intro": "Ceci est une demande : rien n'est payé maintenant. Nous vérifions la disponibilité et vous répondons sur WhatsApp avec les instructions de paiement.",
+    "etapes": ["Vous envoyez la demande", "Nous confirmons sur WhatsApp", "Vous payez (espèces ou Mobile Money)", "Votre lit est réservé"],
+    "type": "Je réserve en tant que",
+    "etudiant": "Étudiant (au mois)",
+    "voyageur": "Voyageur (à la nuit)",
+    "formule": "Type de place",
+    "debut_mois": "Date d'entrée",
+    "nb_mois": "Nombre de mois",
+    "arrivee": "Arrivée",
+    "depart": "Départ",
+    "lit": "Lit souhaité",
+    "lit_peu_importe": "N'importe quel lit libre",
+    "nom": "Nom complet",
+    "telephone": "Téléphone / WhatsApp",
+    "telephone_aide": "Avec l'indicatif, par ex. +243 …",
+    "email": "E-mail (facultatif)",
+    "universite": "Université (facultatif)",
+    "message": "Message (facultatif)",
+    "total": "Total estimé",
+    "envoyer": "Envoyer la demande",
+    "envoi": "Envoi…",
+    "succes_titre": "Demande envoyée",
+    "succes_texte": "Merci ! Votre demande n° {ref} est en attente. Nous vous répondons sur WhatsApp. Pour aller plus vite, envoyez-nous aussi le message ci-dessous.",
+    "succes_wa": "Envoyer le récapitulatif sur WhatsApp",
+    "hors_ligne": "La réservation en ligne arrive bientôt. Le bouton ci-dessous ouvre WhatsApp avec votre demande déjà écrite.",
+    "envoyer_wa": "Envoyer la demande sur WhatsApp",
+    "erreur_dates": "Choisissez une date de départ après la date d'arrivée.",
+    "erreur_pris": "Ce lit n'est plus libre à ces dates. Choisissez un autre lit ou d'autres dates.",
+    "erreur_reseau": "La demande n'a pas pu être envoyée. Vérifiez votre connexion et réessayez, ou utilisez WhatsApp.",
+    "aucun_lit": "Aucun lit libre pour toute cette période. Essayez d'autres dates, ou écrivez-nous sur WhatsApp.",
+    "erreur_champs": "Remplissez votre nom et votre numéro de téléphone.",
+    "wa_recap": "Bonjour The Dorms, voici ma demande de réservation"
+  }
+}

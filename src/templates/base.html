@@ -1,0 +1,86 @@
+{% import 'macros.html' as m with context -%}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ p.titre }}</title>
+<meta name="description" content="{{ p.description }}">
+<link rel="canonical" href="{{ abs(page, lang) }}">
+<link rel="alternate" hreflang="fr" href="{{ abs(page, 'fr') }}">
+<link rel="alternate" hreflang="en" href="{{ abs(page, 'en') }}">
+<link rel="alternate" hreflang="x-default" href="{{ abs(page, 'fr') }}">
+<meta name="theme-color" content="#3E4958">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ s.nom }}">
+<meta property="og:title" content="{{ p.titre }}">
+<meta property="og:description" content="{{ p.description }}">
+<meta property="og:url" content="{{ abs(page, lang) }}">
+<meta property="og:image" content="{{ s.url }}/static/img/brand/apercu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ t.locale }}">
+<meta property="og:locale:alternate" content="{{ autre.locale }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ static('img/brand/favicon.png') }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ static('img/brand/apple-touch-icon.png') }}">
+<link rel="manifest" href="{{ racine }}site.webmanifest">
+<link rel="preload" href="{{ static('fonts/roboto-slab-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ static('css/site.css') }}">
+{% block head %}{% endblock %}
+{% if jsonld %}<script type="application/ld+json">{{ jsonld | safe }}</script>{% endif %}
+</head>
+<body>
+<a class="saut" href="#contenu">{{ 'Aller au contenu' if lang == 'fr' else 'Skip to content' }}</a>
+<header class="entete">
+  <div class="col">
+    <a class="logo" href="{{ url('accueil') }}" aria-label="{{ s.nom }}, {{ t.pages.accueil.nav }}">
+      <svg viewBox="0 0 68 48" aria-hidden="true"><path d="M4 30 L34 6 L64 30" fill="none" stroke="#E9B526" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><rect x="46" y="6" width="7" height="13" fill="#E9B526"/><rect x="27" y="26" width="6" height="6" fill="#E9B526"/><rect x="35" y="26" width="6" height="6" fill="#E9B526"/><rect x="27" y="34" width="6" height="6" fill="#E9B526"/><rect x="35" y="34" width="6" height="6" fill="#E9B526"/></svg>
+      <span><b>The Dorms</b><small>Lubumbashi</small></span>
+    </a>
+    <nav class="nav" aria-label="{{ t.ui.menu }}">
+      {% for k in ['chambres','prix','equipements','acces','faq','contact'] %}<a href="{{ url(k) }}"{% if k == page %} aria-current="page"{% endif %}>{{ t.pages[k].nav }}</a>{% endfor %}
+    </nav>
+    <a class="langue" href="{{ url(page, autre.lang) }}" hreflang="{{ autre.lang }}" lang="{{ autre.lang }}" aria-label="{{ t.ui.langue_autre }}">{{ t.ui.langue_code }}</a>
+    <a class="btn btn-or btn-petit" href="{{ url('reserver') }}">{{ t.ui.reserver }}</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="tiroir" aria-label="{{ t.ui.menu }}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="tiroir" id="tiroir" hidden>
+    <ul class="col">
+      {% for k in ['accueil','chambres','prix','equipements','acces','reglement','faq','contact','reserver'] %}<li><a href="{{ url(k) }}"{% if k == page %} aria-current="page"{% endif %}>{{ t.pages[k].nav }}</a></li>{% endfor %}
+      <li><a href="{{ url(page, autre.lang) }}" hreflang="{{ autre.lang }}" lang="{{ autre.lang }}">{{ t.ui.langue_autre }}</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="contenu">
+{% block contenu %}{% endblock %}
+</main>
+
+<footer class="pied">
+  <div class="col">
+    <div>
+      <b>{{ s.nom }}</b> · {{ t.accroche }}
+      <address>
+        <span>{{ s.adresse.rue }}, {{ s.adresse.quartier }}, {{ s.adresse.ville }}, {{ 'RD Congo' if lang == 'fr' else 'DR Congo' }}</span>
+        <span>WhatsApp / {{ 'Téléphone' if lang == 'fr' else 'Phone' }} : <a href="tel:{{ s.telephone | replace(' ', '') }}">{{ s.telephone }}</a></span>
+        <span>{{ t.ui.ouvert }}</span>
+      </address>
+    </div>
+    <nav aria-label="{{ t.ui.plan_site }}">
+      <b>{{ t.ui.plan_site }}</b>
+      <ul>{% for k in ['chambres','prix','equipements','acces','reglement','faq','contact','reserver'] %}<li><a href="{{ url(k) }}">{{ t.pages[k].nav }}</a></li>{% endfor %}</ul>
+    </nav>
+    <p class="bas">© {{ annee }} {{ s.nom }}. {{ t.ui.tous_droits }}</p>
+  </div>
+</footer>
+
+<a class="whatsapp" href="{{ wa(t.ui.wa_message) }}" target="_blank" rel="noopener" aria-label="{{ t.ui.ecrire_wa }}">{{ m.wa_svg() }}WhatsApp</a>
+
+<script>window.DORMS = {{ config_js | safe }};</script>
+<script src="{{ static('js/site.js') }}" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

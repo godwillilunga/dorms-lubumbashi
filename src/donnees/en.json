@@ -1,0 +1,232 @@
+{
+  "lang": "en",
+  "locale": "en_US",
+  "accroche": "Living calmly in Lubumbashi",
+
+  "pages": {
+    "accueil":     { "slug": "",            "nav": "Home",        "titre": "Hostel & Student Housing in Lubumbashi from $80/month | The Dorms", "description": "Furnished dorm for students and travellers in Lubumbashi's Quartier Industriel: beds from $80/month or $15/night, 24/7 borehole water, constant power, Wi-Fi. Book online." },
+    "chambres":    { "slug": "rooms",       "nav": "Rooms",       "titre": "Rooms and Beds for Rent in Lubumbashi | The Dorms", "description": "Rooms for rent in Lubumbashi: two furnished 4-bed rooms, with 6 new rooms coming soon. Photos and live bed availability.", "h1": "Rooms and beds for rent in Lubumbashi" },
+    "equipements": { "slug": "amenities",   "nav": "Amenities",   "titre": "Amenities: Wi-Fi, Borehole Water, Constant Power | The Dorms Lubumbashi", "description": "Everything is included at The Dorms Lubumbashi: beds with linen, equipped kitchen, hot shower, TV lounge, Wi-Fi, 24/7 borehole water, constant power, guarded yard.", "h1": "Amenities and services included" },
+    "prix":        { "slug": "prices",      "nav": "Prices",      "titre": "Prices: Cheap Accommodation in Lubumbashi, $80/month or $15/night | The Dorms", "description": "Cheap accommodation in Lubumbashi: student bed $80/month ($240 per term) with water and power included, or $15 per night for travellers. Work out your price.", "h1": "Prices and stay calculator" },
+    "acces":       { "slug": "location",    "nav": "Location",    "titre": "Location and Map: Quartier Industriel, Lubumbashi | The Dorms", "description": "The Dorms: 24 Avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, on the British International School road. Map, directions and distances.", "h1": "How to find The Dorms" },
+    "reglement":   { "slug": "house-rules", "nav": "House rules", "titre": "House Rules | The Dorms Lubumbashi", "description": "House rules at The Dorms Lubumbashi: quiet hours 10 pm to 6 am, visitors, cleaning, safety. A calm place to study and rest.", "h1": "House rules" },
+    "faq":         { "slug": "faq",         "nav": "FAQ",         "titre": "FAQ: Hostel and Dorm in Lubumbashi | The Dorms", "description": "Answers about The Dorms Lubumbashi: prices, booking, Mobile Money payment, visits, safety, water and power.", "h1": "Frequently asked questions" },
+    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact and WhatsApp | The Dorms Lubumbashi", "description": "Contact The Dorms Lubumbashi on WhatsApp or by phone at +243 863 472 047. Open 24/7, visits by appointment.", "h1": "Contact us" },
+    "reserver":    { "slug": "book",        "nav": "Book",        "titre": "Book a Bed in Lubumbashi | The Dorms", "description": "Request your bed at The Dorms Lubumbashi in 2 minutes: pick your dates or months, send the request, and we confirm on WhatsApp.", "h1": "Booking request" }
+  },
+
+  "ui": {
+    "menu": "Menu",
+    "fermer": "Close",
+    "langue_autre": "Français",
+    "langue_code": "FR",
+    "reserver": "Book",
+    "reserver_lit": "Book a bed",
+    "ecrire_wa": "Chat on WhatsApp",
+    "wa_message": "Hello The Dorms, I would like information about a bed.",
+    "appeler": "Call",
+    "des": "From",
+    "par_mois": "/ month",
+    "par_lit_mois": "/ bed / month",
+    "par_lit_nuit": "/ bed / night",
+    "par_chambre_mois": "/ room / month",
+    "trimestre": "Per term (3 months)",
+    "nuit": "per night",
+    "bientot": "Coming soon",
+    "voir_photos": "See all photos and free beds",
+    "voir_prix": "See prices",
+    "photo": "Photo",
+    "precedente": "Previous photo",
+    "suivante": "Next photo",
+    "carte_bouton": "Show the map",
+    "carte_note": "The map loads only when you tap, to save your data.",
+    "itineraire": "Directions in Google Maps",
+    "video_bouton": "Play the video tour",
+    "ouvert": "Open 24/7",
+    "tous_droits": "All rights reserved.",
+    "plan_site": "Site map",
+    "liens": "Links",
+    "en_savoir_plus": "Learn more"
+  },
+
+  "types": {
+    "dortoir":      { "nom": "Dorm bed",            "court": "Dorm (4 beds)" },
+    "double":       { "nom": "Bed in a double room", "court": "Double room" },
+    "individuelle": { "nom": "Single room",          "court": "Single room" }
+  },
+
+  "accueil": {
+    "h1": "Furnished dorm for students and travellers in Lubumbashi",
+    "intro": "Comfortable beds in a new house, in the quiet Quartier Industriel near the universities. 24/7 borehole water, constant power, Wi-Fi and staff on site day and night.",
+    "faits": ["From $80 / month", "$15 per night", "8 beds · 2 rooms", "Staff 24/7"],
+    "prix_titre": "Clear prices, water and power included",
+    "prix_texte": "You send a request online, we confirm on WhatsApp, then you pay in person or by Mobile Money.",
+    "etudiant_badge": "Students",
+    "etudiant_pour": "Dorm bed, monthly",
+    "etudiant_points": ["Water and electricity included", "Shared kitchen, lounge and Wi-Fi"],
+    "etudiant_bouton": "Request a student bed",
+    "voyageur_badge": "Travellers",
+    "voyageur_pour": "Dorm bed, nightly",
+    "voyageur_points": ["Sheets and pillow provided", "Hot shower, equipped kitchen", "Ideal for a short stay in Lubumbashi"],
+    "voyageur_bouton": "Pick my dates",
+    "bientot_titre": "Coming soon: a new house with 6 rooms",
+    "inclus_titre": "Everything is included",
+    "photos_titre": "The house in pictures",
+    "video_titre": "Take a tour of the house",
+    "video_texte": "The video loads only when you tap it, to save your mobile data.",
+    "acces_titre": "Quiet, and close to everything",
+    "temoignages_titre": "What our guests say",
+    "appel_titre": "A bed is waiting for you",
+    "appel_texte": "Send a request and we will reply on WhatsApp with the details."
+  },
+
+  "equipements": [
+    { "icone": "lit",      "titre": "Comfortable beds",        "texte": "Mattress, sheets and pillows provided." },
+    { "icone": "cuisine",  "titre": "Equipped kitchen",        "texte": "Cooker, fridge and utensils." },
+    { "icone": "douche",   "titre": "Hot shower",              "texte": "Bathroom with water heater." },
+    { "icone": "tv",       "titre": "Lounge with TV",          "texte": "Shared sofa and dining area." },
+    { "icone": "eau",      "titre": "24/7 borehole water",     "texte": "Self-filling water tank." },
+    { "icone": "courant",  "titre": "Constant electricity",    "texte": "Study in the evening without power cuts." },
+    { "icone": "wifi",     "titre": "Wi-Fi",                   "texte": "Internet included in the price." },
+    { "icone": "securite", "titre": "Walled and guarded yard", "texte": "Solid wall, gate, staff 24/7." }
+  ],
+
+  "equipements_page": {
+    "intro": "The price covers your bed, water, electricity and use of all shared spaces. Bring your things; everything else is ready.",
+    "blocs": [
+      { "titre": "Water around the clock", "texte": "Our borehole fills the water tank automatically. Water reaches the whole house 24/7 (toilets, kitchen, water heater) and the 3 taps in the yard.", "photo": "forage" },
+      { "titre": "A kitchen to cook like at home", "texte": "Electric cooker, fridge, sink, worktops and utensils. Everyone tidies and cleans up after their meal.", "photo": "cuisine-2" },
+      { "titre": "A lounge to relax", "texte": "Sofa, TV and dining area to watch a film, chat or study together.", "photo": "salon-2" },
+      { "titre": "Safe and quiet", "texte": "The plot is enclosed by a solid wall with a gate. Two attendants are on site 24/7 to help you. The neighbourhood is calm and decent.", "photo": "cour" }
+    ]
+  },
+
+  "chambres_page": {
+    "intro": "The current house has two 4-bed rooms (bunk beds). Every resident has their own bed, pillow and sheets. A new 6-room house is being built on the same plot.",
+    "maison-1": "Current house",
+    "maison-2": "New house",
+    "maison-2_texte": "6 rooms plus 2 extra showers and 2 extra toilets.",
+    "lits": "beds",
+    "galerie_titre": "Photos",
+    "cats": { "tout": "All", "chambres": "Rooms", "salon": "Lounge", "cuisine": "Kitchen", "douche": "Bathroom", "exterieur": "Outside" },
+    "dispo_titre": "Free beds",
+    "dispo_texte": "Pick a month to see which beds are free each day.",
+    "dispo_libre": "Free",
+    "dispo_pris": "Taken",
+    "dispo_hors_ligne": "The live calendar is coming soon. Meanwhile, ask us on WhatsApp which beds are free.",
+    "dispo_erreur": "Could not load availability. Check your connection, or message us on WhatsApp."
+  },
+
+  "prix_page": {
+    "intro": "Two simple options, water and electricity included. You pay only after we confirm, in cash or by Mobile Money (M-Pesa, Orange Money, Airtel Money).",
+    "tableau_titre": "Price list",
+    "col_formule": "Option",
+    "col_mois": "Per month",
+    "col_trimestre": "Per term",
+    "col_nuit": "Per night",
+    "calc_titre": "Work out your price",
+    "calc_je_suis": "I am a",
+    "calc_etudiant": "Student (monthly)",
+    "calc_voyageur": "Traveller (nightly)",
+    "calc_mois": "Number of months",
+    "calc_arrivee": "Check-in",
+    "calc_depart": "Check-out",
+    "calc_total": "Estimated total",
+    "calc_detail_mois": "{n} month(s) × ${p}",
+    "calc_detail_nuits": "{n} night(s) × ${p}",
+    "calc_dates_invalides": "Pick a check-out date after the check-in date.",
+    "calc_reserver": "Book with these choices"
+  },
+
+  "acces_page": {
+    "intro": "The Dorms is in the Quartier Industriel (Kampemba), a quiet area close to the universities, transport and shops.",
+    "adresse_titre": "Address",
+    "repere": "Landmark: the British International School road",
+    "distances_titre": "Distances from The Dorms",
+    "venir_titre": "Getting here",
+    "venir": [
+      "Take the British International School road in the Quartier Industriel.",
+      "Continue on Avenue Mungunzi prolongé to number 24.",
+      "Lost? Call us or send your location on WhatsApp and we will guide you."
+    ]
+  },
+
+  "reglement_page": {
+    "intro": "These rules let everyone study, sleep and live calmly. They apply to all residents and their visitors, and are signed on arrival.",
+    "regles": [
+      { "titre": "Respect others", "texte": "Everyone respects other residents' person, sleep, studies, religion and belongings. Disagreements are settled by talking, then with the manager." },
+      { "titre": "Quiet from 10 pm to 6 am", "texte": "Silence, headphones required, calls in a low voice outside the rooms. During the day keep the volume reasonable, especially during exams." },
+      { "titre": "Visitors", "texte": "Visits from 6 am to 9 pm, preferably in the lounge, 2 visitors at most per resident. In a bedroom only with the roommates' agreement." },
+      { "titre": "Overnight guests", "texte": "Not allowed without prior permission from the manager and the roommates' agreement, 1 night per month at most, never in another resident's bed." },
+      { "titre": "Cleanliness", "texte": "Bed made and things tidied every day. No food or dishes in the bedrooms. Lounge, kitchen, toilet and bathroom are cleaned on the rota and left clean after use." },
+      { "titre": "Rubbish", "texte": "In the closed bins provided. No rubbish in the yard or the street." },
+      { "titre": "Water and electricity", "texte": "Turn off taps, lights and unused appliances. High-power appliances only with permission. No makeshift connections." },
+      { "titre": "Safety", "texte": "No cooking or stoves in the bedrooms, no unattended candles, do not touch the electrical installation. Close doors and windows." },
+      { "titre": "Keys and gate", "texte": "Keys may not be lent or copied. The gate is locked from midnight to 5 am; no resident is left outside." },
+      { "titre": "Valuables", "texte": "Keep valuables locked in your locker. Nobody touches another person's things without permission." },
+      { "titre": "No subletting", "texte": "Subletting, giving or lending your place, even for a few days, is not allowed without written agreement." },
+      { "titre": "Damage", "texte": "Report any damage the same day. Residents must not repair electrics or plumbing themselves." },
+      { "titre": "Violence and illegal drugs", "texte": "Violence, threats, harassment and hazing are forbidden, as are drugs. Alcohol, if consumed, must not cause noise or trouble." },
+      { "titre": "Absences", "texte": "Tell the manager about any absence longer than 7 days." }
+    ]
+  },
+
+  "faq": [
+    { "q": "Who can stay at The Dorms?", "r": "Students, who rent a bed by the month, and travellers passing through Lubumbashi, who rent a bed by the night." },
+    { "q": "How much is a bed?", "r": "$80 per month for students ($240 per term), water and electricity included. $15 per night for travellers." },
+    { "q": "What is included in the price?", "r": "Your bed with mattress, sheets and pillow, the equipped kitchen, hot shower, lounge with TV, Wi-Fi, 24/7 borehole water and electricity." },
+    { "q": "How do I book?", "r": "Fill in the booking form with your dates or months. We check and reply on WhatsApp with payment instructions. Your place is confirmed once paid." },
+    { "q": "How do I pay?", "r": "In cash on site, or by M-Pesa, Orange Money or Airtel Money, only after we confirm. We never take automatic online payments." },
+    { "q": "Can I visit before booking?", "r": "Yes, by appointment. Call us or send a WhatsApp message to +243 863 472 047." },
+    { "q": "Are the rooms shared?", "r": "Yes, each room in the current house has 4 beds (bunk beds). Double and single rooms are coming soon in the new house." },
+    { "q": "Is it safe?", "r": "Yes. The plot is enclosed by a solid wall with a gate, and two attendants are on site 24/7." },
+    { "q": "Are there water or power cuts?", "r": "Water comes from our borehole with a self-filling tank, available 24/7. Electricity is constant." },
+    { "q": "Can I cook?", "r": "Yes, residents share the equipped kitchen. Cooking in the bedrooms is not allowed." },
+    { "q": "Can I have visitors?", "r": "Yes, from 6 am to 9 pm, preferably in the lounge, with 2 visitors at most per resident. Overnight guests need permission." },
+    { "q": "Where is The Dorms?", "r": "At 24 Avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, on the British International School road, near the universities." }
+  ],
+
+  "contact_page": {
+    "intro": "The fastest way is WhatsApp. We are reachable 24/7 and visits are by appointment.",
+    "form_titre": "Send a message",
+    "form_texte": "Your message opens in WhatsApp, ready to send.",
+    "nom": "Your name",
+    "message": "Your message",
+    "envoyer": "Open in WhatsApp"
+  },
+
+  "reserver_page": {
+    "intro": "This is a request: nothing is paid now. We check availability and reply on WhatsApp with payment instructions.",
+    "etapes": ["You send the request", "We confirm on WhatsApp", "You pay (cash or Mobile Money)", "Your bed is booked"],
+    "type": "I am booking as a",
+    "etudiant": "Student (monthly)",
+    "voyageur": "Traveller (nightly)",
+    "formule": "Type of place",
+    "debut_mois": "Move-in date",
+    "nb_mois": "Number of months",
+    "arrivee": "Check-in",
+    "depart": "Check-out",
+    "lit": "Preferred bed",
+    "lit_peu_importe": "Any free bed",
+    "nom": "Full name",
+    "telephone": "Phone / WhatsApp",
+    "telephone_aide": "With country code, e.g. +243 …",
+    "email": "Email (optional)",
+    "universite": "University (optional)",
+    "message": "Message (optional)",
+    "total": "Estimated total",
+    "envoyer": "Send request",
+    "envoi": "Sending…",
+    "succes_titre": "Request sent",
+    "succes_texte": "Thank you! Your request no. {ref} is pending. We will reply on WhatsApp. To speed things up, also send us the message below.",
+    "succes_wa": "Send the summary on WhatsApp",
+    "hors_ligne": "Online booking is coming soon. The button below opens WhatsApp with your request already written.",
+    "envoyer_wa": "Send the request on WhatsApp",
+    "erreur_dates": "Pick a check-out date after the check-in date.",
+    "erreur_pris": "This bed is no longer free on those dates. Choose another bed or other dates.",
+    "erreur_reseau": "The request could not be sent. Check your connection and try again, or use WhatsApp.",
+    "aucun_lit": "No bed is free for that whole period. Try other dates, or message us on WhatsApp.",
+    "erreur_champs": "Fill in your name and phone number.",
+    "wa_recap": "Hello The Dorms, here is my booking request"
+  }
+}

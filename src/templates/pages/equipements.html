@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% set e = t.equipements_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ e.intro }}</p>{% endcall %}
+<section>
+  <div class="col">
+    <ul class="inclus">
+      {% for x in t.equipements %}<li>{{ m.icone(x.icone) }}<div><b>{{ x.titre }}</b><span>{{ x.texte }}</span></div></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="sans-haut">
+  <div class="col blocs">
+    {% for b in e.blocs %}
+    <div class="bloc">
+      {{ m.pic(b.photo, sizes='(min-width:760px) 50vw, 100vw') }}
+      <div><h2>{{ b.titre }}</h2><p>{{ b.texte }}</p></div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% include 'appel.html' %}
+{% endblock %}

@@ -1,0 +1,75 @@
+{
+  "_aide": "Infos communes aux deux langues. Modifiez les valeurs entre guillemets, puis enregistrez (Commit) : le site se met à jour tout seul en 1 à 2 minutes.",
+
+  "nom": "The Dorms Lubumbashi",
+  "url": "https://godwillilunga.github.io/dorms-lubumbashi",
+  "_domaine_aide": "Quand vous aurez un nom de domaine (ex. dormslubumbashi.com), mettez-le ici ET changez url ci-dessus en https://dormslubumbashi.com",
+  "domaine": "",
+  "telephone": "+243 863 472 047",
+  "whatsapp": "243863472047",
+  "email": "",
+  "adresse": {
+    "rue": "24, avenue Mungunzi prolongé",
+    "quartier": "Quartier Industriel",
+    "commune": "Kampemba",
+    "ville": "Lubumbashi",
+    "province": "Haut-Katanga",
+    "pays": "CD",
+    "plus_code": "9F7W+387 Lubumbashi"
+  },
+  "geo": { "lat": -11.637333, "lng": 27.495808 },
+
+  "_prix_aide": "Prix en dollars. 'trimestre' = prix pour 3 mois. 'bientot': true = affiché comme « Bientôt » et pas encore réservable.",
+  "types": [
+    { "id": "dortoir",     "mois": 80,  "trimestre": 240, "nuit": 15,   "places": "lit",     "bientot": false },
+    { "id": "double",      "mois": 90,  "trimestre": 270, "nuit": null, "places": "lit",     "bientot": true },
+    { "id": "individuelle","mois": 120, "trimestre": 360, "nuit": null, "places": "chambre", "bientot": true }
+  ],
+
+  "_maisons_aide": "Description affichée des maisons. Les vrais lits réservables sont gérés dans l'espace admin (base Supabase).",
+  "maisons": [
+    { "id": "maison-1", "chambres": [ {"fr": "Chambre A", "en": "Room A", "type": "dortoir", "lits": 4}, {"fr": "Chambre B", "en": "Room B", "type": "dortoir", "lits": 4} ], "bientot": false },
+    { "id": "maison-2", "chambres": [ {"fr": "2 chambres doubles", "en": "2 double rooms", "type": "double", "lits": 4}, {"fr": "4 chambres individuelles", "en": "4 single rooms", "type": "individuelle", "lits": 4} ], "bientot": true }
+  ],
+
+  "_reperes_aide": "Distances affichées sur la page Accès. Ajoutez des lignes au même format (ex. les universités).",
+  "reperes": [
+    { "fr": "Carrefour (rond-point)", "en": "Carrefour roundabout", "distance": "800 m" },
+    { "fr": "Marché Rail", "en": "Marché Rail market", "distance": "1 km" },
+    { "fr": "Carrefour Food Court", "en": "Carrefour Food Court", "distance": "1,2 km" },
+    { "fr": "Centre-ville", "en": "City centre", "distance": "7,3 km" },
+    { "fr": "Aéroport international de Lubumbashi (Luano)", "en": "Lubumbashi International Airport (Luano)", "distance": "9,8 km · 20 min" }
+  ],
+
+  "_youtube_aide": "Collez ici l'identifiant de votre vidéo YouTube (la partie après v= dans le lien). Vide = la section vidéo est cachée.",
+  "youtube_id": "",
+
+  "_supabase_aide": "Rempli à l'étape 4. La clé 'anon' est publique par conception ; les données sont protégées par les règles RLS.",
+  "supabase_url": "https://xisadtwihzbkswnwssfd.supabase.co",
+  "supabase_anon_key": "",
+
+  "photos": [
+    { "nom": "salon-1",     "cat": "salon",     "fr": "Salon commun avec canapé, tapis, télévision murale et chaises", "en": "Shared living room with sofa, rug, wall-mounted TV and chairs" },
+    { "nom": "chambre-1",   "cat": "chambres",  "fr": "Lit superposé en métal noir avec draps blancs et oreiller", "en": "Black metal bunk bed with white sheets and pillow" },
+    { "nom": "chambre-3",   "cat": "chambres",  "fr": "Chambre de 4 lits avec deux lits superposés et couvre-lits colorés", "en": "4-bed room with two bunk beds and colourful bedspreads" },
+    { "nom": "chambre-4",   "cat": "chambres",  "fr": "Lits superposés le long du mur, fenêtre et rideaux", "en": "Bunk beds along the wall, window and curtains" },
+    { "nom": "chambre-2",   "cat": "chambres",  "fr": "Lit superposé avec couvre-lit coloré", "en": "Bunk bed with a colourful bedspread" },
+    { "nom": "chambre-5",   "cat": "chambres",  "fr": "Lit du bas d'un lit superposé, draps blancs", "en": "Lower bunk with white sheets" },
+    { "nom": "cuisine-1",   "cat": "cuisine",   "fr": "Cuisine équipée : cuisinière, évier sous la fenêtre et étagères", "en": "Equipped kitchen: cooker, sink under the window and shelves" },
+    { "nom": "cuisine-2",   "cat": "cuisine",   "fr": "Cuisine avec réfrigérateur, cuisinière électrique et étagères", "en": "Kitchen with fridge, electric cooker and shelves" },
+    { "nom": "cuisine-3",   "cat": "cuisine",   "fr": "Cuisine carrelée avec réfrigérateur et plan de travail", "en": "Tiled kitchen with fridge and worktop" },
+    { "nom": "cuisine-4",   "cat": "cuisine",   "fr": "Plan de travail et évier de la cuisine", "en": "Kitchen worktop and sink" },
+    { "nom": "salon-2",     "cat": "salon",     "fr": "Salon avec canapé, table, horloge et télévision", "en": "Living room with sofa, table, clock and TV" },
+    { "nom": "salon-3",     "cat": "salon",     "fr": "Salon au plafond décoratif avec éclairage intégré", "en": "Living room with decorative ceiling and built-in lights" },
+    { "nom": "douche-1",    "cat": "douche",    "fr": "Salle de bain : lavabo, miroir rond et douche", "en": "Bathroom: washbasin, round mirror and shower" },
+    { "nom": "douche-2",    "cat": "douche",    "fr": "Salle de bain carrelée avec cabine de douche", "en": "Tiled bathroom with shower cabin" },
+    { "nom": "douche-3",    "cat": "douche",    "fr": "Douche carrelée avec pommeau et eau chaude", "en": "Tiled shower with hot water" },
+    { "nom": "exterieur-1", "cat": "exterieur", "fr": "Façade de la maison et cour clôturée", "en": "House front and walled yard" },
+    { "nom": "exterieur-2", "cat": "exterieur", "fr": "La maison et le portail sous un ciel bleu", "en": "The house and gate under a blue sky" },
+    { "nom": "cour",        "cat": "exterieur", "fr": "Allée carrelée avec plantes et portail sécurisé", "en": "Tiled path with plants and secure gate" },
+    { "nom": "forage",      "cat": "exterieur", "fr": "Forage et réservoir d'eau à remplissage automatique", "en": "Borehole and self-filling water tank" }
+  ],
+
+  "_temoignages_aide": "Ajoutez seulement de vrais avis, avec l'accord de la personne. Format : {\"nom\": \"Prénom\", \"texte_fr\": \"...\", \"texte_en\": \"...\"}. Liste vide = section cachée.",
+  "temoignages": []
+}

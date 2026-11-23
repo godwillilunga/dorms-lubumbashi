@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% set x = t.reserver_page %}
+{% set ouverts = s.types | rejectattr('bientot') | list %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ x.intro }}</p>{% endcall %}
+<section>
+  <div class="col deux-col">
+    <div>
+      <form class="carte-blanche form-resa" data-resa novalidate>
+        <fieldset class="champ">
+          <legend>{{ x.type }}</legend>
+          <div class="choix">
+            <label><input type="radio" name="type" value="etudiant" checked> {{ x.etudiant }}</label>
+            <label><input type="radio" name="type" value="voyageur"> {{ x.voyageur }}</label>
+          </div>
+        </fieldset>
+
+        <div class="champ"{% if ouverts | length < 2 %} hidden{% endif %}>
+          <label for="r-formule">{{ x.formule }}</label>
+          <select id="r-formule" name="formule">{% for ty in ouverts %}<option value="{{ ty.id }}">{{ t.types[ty.id].nom }}</option>{% endfor %}</select>
+        </div>
+
+        <div class="champs" data-si="etudiant">
+          <div class="champ"><label for="r-debut">{{ x.debut_mois }}</label><input id="r-debut" name="debut" type="date"></div>
+          <div class="champ"><label for="r-mois">{{ x.nb_mois }}</label>
+            <select id="r-mois" name="mois">{% for n in range(1, 13) %}<option value="{{ n }}"{% if n == 3 %} selected{% endif %}>{{ n }}</option>{% endfor %}</select></div>
+        </div>
+        <div class="champs" data-si="voyageur" hidden>
+          <div class="champ"><label for="r-arr">{{ x.arrivee }}</label><input id="r-arr" name="arrivee" type="date"></div>
+          <div class="champ"><label for="r-dep">{{ x.depart }}</label><input id="r-dep" name="depart" type="date"></div>
+        </div>
+
+        <div class="champ" data-lit hidden>
+          <label for="r-lit">{{ x.lit }}</label>
+          <select id="r-lit" name="lit"><option value="">{{ x.lit_peu_importe }}</option></select>
+        </div>
+
+        <div class="champs">
+          <div class="champ"><label for="r-nom">{{ x.nom }}</label><input id="r-nom" name="nom" autocomplete="name" required maxlength="120"></div>
+          <div class="champ"><label for="r-tel">{{ x.telephone }}</label><input id="r-tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" placeholder="+243"><small>{{ x.telephone_aide }}</small></div>
+          <div class="champ"><label for="r-email">{{ x.email }}</label><input id="r-email" name="email" type="email" autocomplete="email" maxlength="120"></div>
+          <div class="champ" data-si="etudiant"><label for="r-univ">{{ x.universite }}</label><input id="r-univ" name="universite" maxlength="120"></div>
+        </div>
+        <div class="champ"><label for="r-msg">{{ x.message }}</label><textarea id="r-msg" name="message" maxlength="1000"></textarea></div>
+        <div class="sr" aria-hidden="true"><label for="r-site">Site</label><input id="r-site" name="site" tabindex="-1" autocomplete="off"></div>
+
+        <div class="total">
+          <div><span>{{ x.total }}</span><small data-detail></small></div>
+          <output data-total>–</output>
+        </div>
+        <p class="alerte" data-erreur hidden></p>
+        <p class="info" data-hors-ligne hidden>{{ x.hors_ligne }}</p>
+        <button class="btn btn-or" type="submit" data-envoyer>{{ x.envoyer }}</button>
+      </form>
+
+      <div class="succes" data-succes hidden tabindex="-1">
+        <h2>{{ x.succes_titre }}</h2>
+        <p data-succes-texte></p>
+        <a class="btn btn-wa" data-succes-wa href="#" target="_blank" rel="noopener">{{ m.wa_svg() }}{{ x.succes_wa }}</a>
+      </div>
+    </div>
+
+    <aside class="collant">
+      <div class="carte-blanche" style="display:grid;gap:1rem">
+        <ol class="etapes" style="grid-template-columns:1fr">{% for e in x.etapes %}<li>{{ e }}</li>{% endfor %}</ol>
+        <div class="total" style="display:grid;gap:.3rem">
+          {% for ty in ouverts %}
+          <span><b>{{ t.types[ty.id].nom }}</b></span>
+          <span style="color:var(--doux)">{{ m.usd(ty.mois) }} {{ t.ui.par_mois }} · {{ t.ui.trimestre | lower }} {{ m.usd(ty.trimestre) }}{% if ty.nuit %} · {{ m.usd(ty.nuit) }} {{ t.ui.nuit }}{% endif %}</span>
+          {% endfor %}
+        </div>
+        <a class="btn btn-wa" href="{{ wa(t.ui.wa_message) }}" target="_blank" rel="noopener">{{ m.wa_svg() }}{{ t.ui.ecrire_wa }}</a>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ static('js/reserver.js') }}" defer></script>{% endblock %}

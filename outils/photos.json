@@ -1,0 +1,21 @@
+[
+ {"nom": "salon-1",      "source": "Dorms/new photos january/ph3.jpeg"},
+ {"nom": "salon-2",      "source": "Dorms/New photos Aout 202/WhatsApp Image 2026-09-02 at 13.02.29 (1).jpeg"},
+ {"nom": "salon-3",      "source": "Dorms/new photos january/ph5.jpeg"},
+ {"nom": "chambre-1",    "source": "Dorms/New photos Aout 202/WhatsApp Image 2026-09-02 at 13.02.28 (1).jpeg"},
+ {"nom": "chambre-2",    "source": "Dorms/New photos Aout 202/WhatsApp Image 2026-09-02 at 13.02.28.jpeg"},
+ {"nom": "chambre-3",    "source": "Dorms/new photos january/ph8.jpeg"},
+ {"nom": "chambre-4",    "source": "Dorms/new photos january/ph9.jpeg"},
+ {"nom": "chambre-5",    "source": "Dorms/new photos january/ph11.jpeg"},
+ {"nom": "cuisine-1",    "source": "Dorms/New Photos Mois de Mai/IMG_8615.HEIC"},
+ {"nom": "cuisine-2",    "source": "Dorms/New Photos Mois de Mai/IMG_8612.HEIC"},
+ {"nom": "cuisine-3",    "source": "Dorms/New photos Aout 202/WhatsApp Image 2026-09-02 at 13.02.29 (2).jpeg"},
+ {"nom": "cuisine-4",    "source": "Dorms/New Photos Mois de Mai/IMG_8621.HEIC"},
+ {"nom": "douche-1",     "source": "Dorms/New photos Aout 202/WhatsApp Image 2026-09-02 at 13.02.29.jpeg"},
+ {"nom": "douche-2",     "source": "Dorms/new photos january/ph14.jpeg"},
+ {"nom": "douche-3",     "source": "Dorms/IMG-20251215-WA0006.jpg"},
+ {"nom": "exterieur-1",  "source": "Dorms/new photos march 2026/WhatsApp Image 2026-03-11 at 16.02.21 (2).jpeg"},
+ {"nom": "exterieur-2",  "source": "Dorms/new photos march 2026/WhatsApp Image 2026-03-11 at 16.02.20.jpeg"},
+ {"nom": "cour",         "source": "Dorms/exterieur1.jpg"},
+ {"nom": "forage",       "source": "Dorms/forage.png"}
+]

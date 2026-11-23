@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% set c = t.chambres_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ c.intro }}</p>{% endcall %}
+
+<section>
+  <div class="col maisons">
+    {% for ma in s.maisons %}
+    <article class="maison{% if ma.bientot %} futur{% endif %}">
+      <h2 style="font-size:1.2rem">{{ c[ma.id] }} {% if ma.bientot %}<span class="pastille">{{ t.ui.bientot }}</span>{% endif %}</h2>
+      <ul>
+        {% for ch in ma.chambres %}
+        {% set ty = (s.types | selectattr('id', 'equalto', ch.type) | first) %}
+        <li><span>{{ ch[lang] }} · {{ ch.lits }} {{ c.lits }}</span><span>{{ m.usd(ty.mois) }} {{ t.ui.par_chambre_mois if ty.places == 'chambre' else t.ui.par_lit_mois }}</span></li>
+        {% endfor %}
+      </ul>
+      {% if ma.bientot %}<p style="color:var(--doux);font-size:.93rem">{{ c['maison-2_texte'] }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="sans-haut" id="dispo" aria-labelledby="t-dispo">
+  <div class="col">
+    <div class="tete">
+      <h2 id="t-dispo">{{ c.dispo_titre }}</h2>
+      <p>{{ c.dispo_texte }}</p>
+    </div>
+    <div data-dispo>
+      <div class="dispo-barre">
+        <button class="btn btn-ligne btn-petit" type="button" data-mois="-1" aria-label="{{ 'Mois précédent' if lang == 'fr' else 'Previous month' }}">‹</button>
+        <span class="mois" aria-live="polite"></span>
+        <button class="btn btn-ligne btn-petit" type="button" data-mois="1" aria-label="{{ 'Mois suivant' if lang == 'fr' else 'Next month' }}">›</button>
+        <span class="legende"><span><i style="background:color-mix(in srgb, var(--libre) 22%, var(--fond))"></i>{{ c.dispo_libre }}</span><span><i style="background:var(--pris)"></i>{{ c.dispo_pris }}</span></span>
+      </div>
+      <div class="cal-wrap" hidden></div>
+      <p class="info" data-etat>…</p>
+    </div>
+    <a class="btn btn-or" style="margin-top:1rem" href="{{ url('reserver') }}">{{ t.ui.reserver_lit }}</a>
+  </div>
+</section>
+
+<section class="sans-haut" id="photos" aria-labelledby="t-photos">
+  <div class="col">
+    <div class="tete"><h2 id="t-photos">{{ c.galerie_titre }}</h2></div>
+    <div class="filtres" role="group" aria-label="{{ c.galerie_titre }}">
+      {% for k, v in c.cats.items() %}<button type="button" data-filtre="{{ k }}" aria-pressed="{{ 'true' if k == 'tout' else 'false' }}">{{ v }}</button>{% endfor %}
+    </div>
+    <div class="galerie complete" data-galerie>
+      {% for ph in s.photos %}
+      <a href="{{ m.grande(ph.nom) }}" data-cat="{{ ph.cat }}" data-leg="{{ ph[lang] }}">{{ m.pic(ph.nom, sizes='(min-width:760px) 33vw, 50vw', alt=ph[lang]) }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% include 'visionneuse.html' %}
+{% endblock %}
+{% block scripts %}<script src="{{ static('js/dispo.js') }}" defer></script>{% endblock %}

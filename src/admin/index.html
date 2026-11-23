@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | The Dorms Lubumbashi</title>
+<link rel="icon" href="../static/img/brand/favicon.png" type="image/png">
+<link rel="stylesheet" href="../static/css/site.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+<header class="entete">
+  <div class="col">
+    <a class="logo" href="./"><svg viewBox="0 0 68 48" aria-hidden="true"><path d="M4 30 L34 6 L64 30" fill="none" stroke="#E9B526" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><rect x="46" y="6" width="7" height="13" fill="#E9B526"/></svg><span><b>The Dorms</b><small>Admin</small></span></a>
+    <span id="qui" class="qui"></span>
+    <button id="deconnexion" class="btn btn-clair btn-petit" type="button" hidden>Déconnexion</button>
+  </div>
+</header>
+
+<main id="contenu" class="col">
+  <section id="ecran-connexion" class="connexion" hidden>
+    <form id="form-connexion" class="carte-blanche calc">
+      <h1 style="font-size:1.5rem">Espace administrateur</h1>
+      <div class="champ"><label for="cx-email">E-mail</label><input id="cx-email" type="email" autocomplete="username" required></div>
+      <div class="champ"><label for="cx-mdp">Mot de passe</label><input id="cx-mdp" type="password" autocomplete="current-password" required></div>
+      <p class="alerte" id="cx-erreur" hidden></p>
+      <button class="btn btn-or" type="submit">Se connecter</button>
+    </form>
+  </section>
+
+  <section id="ecran-config" hidden>
+    <p class="info">La base de données n'est pas encore configurée : remplissez <code>supabase_url</code> et <code>supabase_anon_key</code> dans <code>src/donnees/site.json</code>.</p>
+  </section>
+
+  <div id="app" hidden>
+    <nav class="onglets" role="tablist" aria-label="Sections">
+      <button role="tab" data-onglet="bord" aria-selected="true">Tableau de bord</button>
+      <button role="tab" data-onglet="demandes">Demandes <span class="compteur" id="nb-demandes"></span></button>
+      <button role="tab" data-onglet="calendrier">Calendrier</button>
+      <button role="tab" data-onglet="reservations">Réservations</button>
+      <button role="tab" data-onglet="paiements">Paiements</button>
+      <button role="tab" data-onglet="etudiants">Étudiants <span class="compteur alerte-c" id="nb-retards"></span></button>
+      <button role="tab" data-onglet="logement">Lits &amp; prix</button>
+      <button role="tab" data-onglet="airbnb">Airbnb</button>
+      <button role="tab" data-onglet="reglages">Réglages</button>
+    </nav>
+    <p id="message" class="toast" role="status" hidden></p>
+    <div id="vue"></div>
+  </div>
+</main>
+
+<dialog id="modale" class="modale"><form method="dialog" id="modale-form" class="calc"></form></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

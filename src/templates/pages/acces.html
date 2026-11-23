@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% set x = t.acces_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ x.intro }}</p>{% endcall %}
+<section>
+  <div class="col grille-acces">
+    <div>
+      <h2 style="margin-bottom:.8rem">{{ x.adresse_titre }}</h2>
+      <address class="adresse">
+        <b>{{ s.adresse.rue }}</b>
+        <span>{{ s.adresse.quartier }}, {{ s.adresse.commune }}, {{ s.adresse.ville }}, {{ s.adresse.province }}</span>
+        <span class="rep">{{ x.repere }}</span>
+        <span class="rep">Plus Code : {{ s.adresse.plus_code }}</span>
+      </address>
+      <div class="carte" data-carte="https://maps.google.com/maps?q={{ s.geo.lat }},{{ s.geo.lng }}&amp;z=16&amp;hl={{ lang }}&amp;output=embed" data-titre="{{ s.nom }}">
+        <div><button class="btn btn-or" type="button">{{ t.ui.carte_bouton }}</button><p>{{ t.ui.carte_note }}</p></div>
+      </div>
+      <div class="actions" style="margin-top:1rem">
+        <a class="btn btn-ligne" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ s.geo.lat }},{{ s.geo.lng }}" target="_blank" rel="noopener">{{ t.ui.itineraire }}</a>
+        <a class="btn btn-wa" href="{{ wa(t.ui.wa_message) }}" target="_blank" rel="noopener">{{ m.wa_svg() }}{{ t.ui.ecrire_wa }}</a>
+      </div>
+    </div>
+    <div>
+      <table class="distances">
+        <caption>{{ x.distances_titre }}</caption>
+        {% for r in s.reperes %}<tr><td>{{ r[lang] }}</td><td>{{ r.distance }}</td></tr>{% endfor %}
+      </table>
+      <h2 style="margin-top:2rem;font-size:1.3rem">{{ x.venir_titre }}</h2>
+      <ol class="liste-etapes">{% for v in x.venir %}<li>{{ v }}</li>{% endfor %}</ol>
+    </div>
+  </div>
+</section>
+{% endblock %}

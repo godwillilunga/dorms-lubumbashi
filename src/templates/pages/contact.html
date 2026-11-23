@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% set x = t.contact_page %}
+{% block contenu %}
+{% call m.titre_page() %}<p class="chapo">{{ x.intro }}</p>{% endcall %}
+<section>
+  <div class="col contacts">
+    <div class="contact-carte">
+      {{ m.icone('tel') }}
+      <b>WhatsApp · {{ t.ui.appeler }}</b>
+      <span class="gros">{{ s.telephone }}</span>
+      <div class="actions"><a class="btn btn-wa btn-petit" href="{{ wa(t.ui.wa_message) }}" target="_blank" rel="noopener">{{ m.wa_svg() }}WhatsApp</a><a class="btn btn-ligne btn-petit" href="tel:{{ s.telephone | replace(' ', '') }}">{{ t.ui.appeler }}</a></div>
+    </div>
+    <div class="contact-carte">
+      {{ m.icone('lieu') }}
+      <b>{{ t.acces_page.adresse_titre }}</b>
+      <address class="adresse"><span>{{ s.adresse.rue }}</span><span>{{ s.adresse.quartier }}, {{ s.adresse.ville }}</span><span class="rep">{{ t.acces_page.repere }}</span></address>
+      <a href="{{ url('acces') }}">{{ t.ui.itineraire }} →</a>
+    </div>
+    <div class="contact-carte">
+      {{ m.icone('horloge') }}
+      <b>{{ t.ui.ouvert }}</b>
+      <span style="color:var(--doux)">{{ 'Visites sur rendez-vous, par WhatsApp ou par téléphone.' if lang == 'fr' else 'Visits by appointment, via WhatsApp or phone.' }}</span>
+    </div>
+  </div>
+</section>
+<section class="sans-haut">
+  <div class="col etroit">
+    <h2>{{ x.form_titre }}</h2>
+    <p style="color:var(--doux);margin:.4rem 0 1rem">{{ x.form_texte }}</p>
+    <form class="carte-blanche calc" data-contact>
+      <div class="champ"><label for="k-nom">{{ x.nom }}</label><input id="k-nom" name="nom" autocomplete="name" required></div>
+      <div class="champ"><label for="k-msg">{{ x.message }}</label><textarea id="k-msg" name="message" required></textarea></div>
+      <button class="btn btn-wa" type="submit">{{ m.wa_svg() }}{{ x.envoyer }}</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

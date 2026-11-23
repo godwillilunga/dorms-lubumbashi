@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% set a = t.accueil %}
+{% set dortoir = s.types[0] %}
+{% block head %}<link rel="preload" as="image" type="image/avif" imagesrcset="{% for w in tailles['salon-1'].tailles %}{{ static('img/photos/salon-1-' ~ w ~ '.avif') }} {{ w }}w{{ ', ' if not loop.last }}{% endfor %}" imagesizes="100vw">{% endblock %}
+{% block contenu %}
+<section class="hero" aria-labelledby="titre">
+  {{ m.pic('salon-1', eager=true) }}
+  <div class="col">
+    <p class="accroche">{{ t.accroche }}</p>
+    <h1 id="titre">{{ a.h1 }}</h1>
+    <p class="intro">{{ a.intro }}</p>
+    <ul class="faits">{% for f in a.faits %}<li>{{ f }}</li>{% endfor %}</ul>
+    <div class="actions">
+      <a class="btn btn-or" href="{{ url('reserver') }}">{{ t.ui.reserver_lit }}</a>
+      <a class="btn btn-clair" href="{{ wa(t.ui.wa_message) }}" target="_blank" rel="noopener">{{ t.ui.ecrire_wa }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="prix" aria-labelledby="t-prix">
+  <div class="col">
+    <div class="tete">
+      <p class="etiquette">{{ t.pages.prix.nav }}</p>
+      <h2 id="t-prix">{{ a.prix_titre }}</h2>
+      <p>{{ a.prix_texte }}</p>
+    </div>
+    <div class="tickets">
+      <article class="ticket vedette">
+        <span class="badge">{{ a.etudiant_badge }}</span>
+        <h3 class="pour">{{ a.etudiant_pour }}</h3>
+        <p class="montant">{{ m.usd(dortoir.mois) }} <small>{{ t.ui.par_lit_mois }}</small></p>
+        <ul>
+          <li>{{ t.ui.trimestre }} : <b>{{ m.usd(dortoir.trimestre) }}</b></li>
+          {% for x in a.etudiant_points %}<li>{{ x }}</li>{% endfor %}
+        </ul>
+        <a class="btn btn-or" href="{{ url('reserver') }}?type=etudiant">{{ a.etudiant_bouton }}</a>
+      </article>
+      <article class="ticket">
+        <span class="badge">{{ a.voyageur_badge }}</span>
+        <h3 class="pour">{{ a.voyageur_pour }}</h3>
+        <p class="montant">{{ m.usd(dortoir.nuit) }} <small>{{ t.ui.par_lit_nuit }}</small></p>
+        <ul>{% for x in a.voyageur_points %}<li>{{ x }}</li>{% endfor %}</ul>
+        <a class="btn btn-or" href="{{ url('reserver') }}?type=voyageur">{{ a.voyageur_bouton }}</a>
+      </article>
+    </div>
+    {% set futurs = s.types | selectattr('bientot') | list %}
+    {% if futurs %}
+    <div class="bientot">
+      <strong>{{ a.bientot_titre }}</strong>
+      {% for ty in futurs %}<span>{{ t.types[ty.id].nom }} <b>{{ m.usd(ty.mois) }}</b> {{ t.ui.par_mois }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section aria-labelledby="t-inclus">
+  <div class="col">
+    <div class="tete">
+      <p class="etiquette">{{ t.pages.equipements.nav }}</p>
+      <h2 id="t-inclus">{{ a.inclus_titre }}</h2>
+    </div>
+    <ul class="inclus">
+      {% for e in t.equipements %}<li>{{ m.icone(e.icone) }}<div><b>{{ e.titre }}</b><span>{{ e.texte }}</span></div></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sans-haut" aria-labelledby="t-photos">
+  <div class="col">
+    <div class="tete">
+      <p class="etiquette">{{ t.chambres_page.galerie_titre }}</p>
+      <h2 id="t-photos">{{ a.photos_titre }}</h2>
+    </div>
+    <div class="galerie accueil">
+      {% for nom, cat in [('chambre-1','chambres'),('cuisine-1','cuisine'),('salon-2','salon'),('douche-1','douche'),('exterieur-1','exterieur')] %}
+      <a href="{{ url('chambres') }}#photos"{% if loop.first %} class="grand"{% endif %}>{{ m.pic(nom, sizes=('(min-width:760px) 50vw, 100vw' if loop.first else '(min-width:760px) 25vw, 50vw')) }}<span class="leg">{{ t.chambres_page.cats[cat] }}</span></a>
+      {% endfor %}
+    </div>
+    <a class="lien-fleche" href="{{ url('chambres') }}">{{ t.ui.voir_photos }} →</a>
+  </div>
+</section>
+
+{% if s.youtube_id %}
+<section class="sans-haut" aria-labelledby="t-video">
+  <div class="col video">
+    <button class="lecteur" type="button" data-youtube="{{ s.youtube_id }}" aria-label="{{ t.ui.video_bouton }}">
+      <img loading="lazy" src="https://i.ytimg.com/vi/{{ s.youtube_id }}/hqdefault.jpg" alt="" width="480" height="360">
+      <span class="jouer"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></i>{{ t.ui.video_bouton }}</span>
+    </button>
+    <div class="tete" style="margin:0">
+      <h2 id="t-video">{{ a.video_titre }}</h2>
+      <p>{{ a.video_texte }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if s.temoignages %}
+<section class="sans-haut" aria-labelledby="t-temoins">
+  <div class="col">
+    <div class="tete"><h2 id="t-temoins">{{ a.temoignages_titre }}</h2></div>
+    <div class="temoins">
+      {% for x in s.temoignages %}<blockquote><p>« {{ x['texte_' ~ lang] }} »</p><footer>{{ x.nom }}</footer></blockquote>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="acces" aria-labelledby="t-acces">
+  <div class="col grille-acces">
+    <div>
+      <div class="tete">
+        <p class="etiquette">{{ t.pages.acces.nav }}</p>
+        <h2 id="t-acces">{{ a.acces_titre }}</h2>
+      </div>
+      <address class="adresse">
+        <b>{{ s.adresse.rue }}</b>
+        <span>{{ s.adresse.quartier }}, {{ s.adresse.commune }}, {{ s.adresse.ville }}</span>
+        <span class="rep">{{ t.acces_page.repere }}</span>
+      </address>
+      <a class="lien-fleche" href="{{ url('acces') }}">{{ t.ui.itineraire }} →</a>
+    </div>
+    <table class="distances">
+      <caption>{{ t.acces_page.distances_titre }}</caption>
+      {% for r in s.reperes %}<tr><td>{{ r[lang] }}</td><td>{{ r.distance }}</td></tr>{% endfor %}
+    </table>
+  </div>
+</section>
+
+<section class="appel" aria-labelledby="t-appel">
+  <div class="col">
+    <div>
+      <h2 id="t-appel">{{ a.appel_titre }}</h2>
+      <p>{{ a.appel_texte }}</p>
+    </div>
+    <a class="btn btn-or" href="{{ url('reserver') }}">{{ t.ui.reserver_lit }}</a>
+  </div>
+</section>
+{% endblock %}
