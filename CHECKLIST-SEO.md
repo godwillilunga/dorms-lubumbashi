@@ -9,6 +9,7 @@ données structurées Google (Hostel + FAQ), pages légères pour téléphones.
 > **The Dorms Lubumbashi**
 > **24, avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi**
 > **+243 863 472 047**
+> **contact@dormslubumbashi.com** · **https://dormslubumbashi.com**
 
 (c'est le « NAP » : Nom, Adresse, Téléphone — Google compare ces informations entre les sites ; elles doivent être identiques.)
 
@@ -47,7 +48,7 @@ Déjà vérifié pour l'ancien site. Il faut ajouter le nouveau :
 2. **Importer depuis Google Search Console** (le plus rapide) → choisissez la propriété des Dorms.
 3. Vérifiez que `sitemap.xml` est bien listé.
 
-## 4. Nom de domaine (≈ 10 $/an) — recommandé
+## 4. Nom de domaine ✅ fait le 23/11/2026 (dormslubumbashi.com, Cloudflare, renouvellement auto 11,17 $/an)
 
 Une adresse comme **dormslubumbashi.com** inspire confiance et se retient mieux.
 

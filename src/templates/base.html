@@ -66,6 +66,7 @@
       <address>
         <span>{{ s.adresse.rue }}, {{ s.adresse.quartier }}, {{ s.adresse.ville }}, {{ 'RD Congo' if lang == 'fr' else 'DR Congo' }}</span>
         <span>WhatsApp / {{ 'Téléphone' if lang == 'fr' else 'Phone' }} : <a href="tel:{{ s.telephone | replace(' ', '') }}">{{ s.telephone }}</a></span>
+        {% if s.email %}<span>E-mail : <a href="mailto:{{ s.email }}">{{ s.email }}</a></span>{% endif %}
         <span>{{ t.ui.ouvert }}</span>
       </address>
     </div>

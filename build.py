@@ -135,7 +135,7 @@ def jsonld(S, t, lang, cle, absolu):
     a = S["adresse"]; dortoir = S["types"][0]
     hostel = {
         "@type": ["Hostel", "LodgingBusiness"], "@id": S["url"] + "/#hostel",
-        "name": S["nom"], "url": absolu("accueil", lang), "telephone": S["telephone"].replace(" ", ""),
+        "name": S["nom"], "url": absolu("accueil", lang), "telephone": S["telephone"].replace(" ", ""), **({"email": S["email"]} if S.get("email") else {}),
         "description": t["pages"]["accueil"]["description"],
         "image": [S["url"] + "/static/img/brand/apercu.jpg"] + [S["url"] + f"/static/img/photos/{n}-960.webp" for n in ("chambre-1", "cuisine-1", "exterieur-1")],
         "logo": S["url"] + "/static/img/brand/icon-512.png",
