@@ -12,7 +12,7 @@
   --doux: #59636F;
   --trait: #E1E4E8;
   --sur-soleil: #1D232B;
-  --wa: #1A9E4F;
+  --wa: #0F7A3D;
   --libre: #2F8F5B;
   --pris: #C2493D;
   --f-titre: "Roboto Slab", Rockwell, Georgia, serif;
@@ -22,10 +22,10 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --ardoise: #262E38; --soleil: #F0C040; --mur: #242019; --fond: #13171C; --surface: #1B2027;
-  --encre: #ECEEF1; --doux: #A3ACB7; --trait: #2C333C; --wa: #1F9E52; --libre: #4CC183; --pris: #E57367; color-scheme: dark; } }
+  --encre: #ECEEF1; --doux: #A3ACB7; --trait: #2C333C; --wa: #0F7A3D; --libre: #4CC183; --pris: #E57367; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --ardoise: #262E38; --soleil: #F0C040; --mur: #242019; --fond: #13171C; --surface: #1B2027;
-  --encre: #ECEEF1; --doux: #A3ACB7; --trait: #2C333C; --wa: #1F9E52; --libre: #4CC183; --pris: #E57367; color-scheme: dark; }
+  --encre: #ECEEF1; --doux: #A3ACB7; --trait: #2C333C; --wa: #0F7A3D; --libre: #4CC183; --pris: #E57367; color-scheme: dark; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
