@@ -2,9 +2,9 @@
   "_aide": "Infos communes aux deux langues. Modifiez les valeurs entre guillemets, puis enregistrez (Commit) : le site se met à jour tout seul en 1 à 2 minutes.",
 
   "nom": "The Dorms Lubumbashi",
-  "url": "https://godwillilunga.github.io/dorms-lubumbashi",
+  "url": "https://dormslubumbashi.com",
   "_domaine_aide": "Quand vous aurez un nom de domaine (ex. dormslubumbashi.com), mettez-le ici ET changez url ci-dessus en https://dormslubumbashi.com",
-  "domaine": "",
+  "domaine": "dormslubumbashi.com",
   "telephone": "+243 863 472 047",
   "whatsapp": "243863472047",
   "email": "",

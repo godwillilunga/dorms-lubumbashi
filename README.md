@@ -1,7 +1,7 @@
 # The Dorms Lubumbashi — site web
 
-Site officiel : **https://godwillilunga.github.io/dorms-lubumbashi/**
-Espace admin : **https://godwillilunga.github.io/dorms-lubumbashi/admin/**
+Site officiel : **https://dormslubumbashi.com/**
+Espace admin : **https://dormslubumbashi.com/admin/**
 
 Le site est publié gratuitement par GitHub Pages. **Vous n'avez rien à installer** : toutes les modifications courantes se font
 directement sur github.com, et le site se met à jour tout seul en 1 à 2 minutes (onglet **Actions** pour suivre).
@@ -121,7 +121,7 @@ anti-double réservation, fonctions `notifier` et `ical`, synchro Airbnb toutes 
    `insert into admins select id from auth.users where email = 'VOTRE-EMAIL';`
 3. resend.com (gratuit, même e-mail) › API Keys › Create. Puis Supabase › Edge Functions › **Secrets** :
    `RESEND_API_KEY` = la clé Resend, `NOTIF_EMAIL` = votre e-mail,
-   `ADMIN_URL` = `https://godwillilunga.github.io/dorms-lubumbashi/admin/`.
+   `ADMIN_URL` = `https://dormslubumbashi.com/admin/`.
 4. Admin › Réglages : indiquez vos numéros M-Pesa / Orange Money / Airtel Money.
 
 **Pause du plan gratuit** : Supabase met en pause un projet sans activité pendant 7 jours. La tâche GitHub

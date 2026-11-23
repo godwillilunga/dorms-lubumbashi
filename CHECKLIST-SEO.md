@@ -23,7 +23,7 @@ Votre fiche existe déjà mais **n'est pas encore validée**. Sans validation, e
    la rue et un repère (route de la British International School), l'entrée/portail avec le numéro 24, l'intérieur
    (salon, chambres), et une preuve que vous êtes le gérant (clés qui ouvrent le portail, document au nom des Dorms).
 3. Après validation, vérifiez :
-   - **Site web** : `https://godwillilunga.github.io/dorms-lubumbashi/` (remplace le Google Site).
+   - **Site web** : `https://dormslubumbashi.com/` (remplace le Google Site).
    - **Catégorie principale** : *Auberge de jeunesse* (Hostel) ; catégories secondaires : *Résidence étudiante*, *Hébergement*.
    - **Horaires** : ouvert 24 h/24.
    - **Attributs** : Wi-Fi, cuisine, parking (si oui), etc.
@@ -35,7 +35,7 @@ Votre fiche existe déjà mais **n'est pas encore validée**. Sans validation, e
 
 Déjà vérifié pour l'ancien site. Il faut ajouter le nouveau :
 1. https://search.google.com/search-console → **Ajouter une propriété** → **Préfixe d'URL** :
-   `https://godwillilunga.github.io/dorms-lubumbashi/`
+   `https://dormslubumbashi.com/`
 2. Méthode de validation : **Google Analytics** (même compte) ou **Balise HTML** (envoyez-moi la balise, je l'ajoute au site).
 3. Menu **Sitemaps** → saisir `sitemap.xml` → **Envoyer**.
 4. Menu **Inspection de l'URL** → collez l'adresse de l'accueil → **Demander une indexation**. Faites-le aussi pour `/prix/` et `/chambres/`.
