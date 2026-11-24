@@ -30,10 +30,25 @@
           <div class="champ"><label for="r-dep">{{ x.depart }}</label><input id="r-dep" name="depart" type="date"></div>
         </div>
 
-        <div class="champ" data-lit hidden>
-          <label for="r-lit">{{ x.lit }}</label>
-          <select id="r-lit" name="lit"><option value="">{{ x.lit_peu_importe }}</option></select>
-        </div>
+        <fieldset class="champ">
+          <legend>{{ x.genre }}</legend>
+          <div class="choix">
+            <label><input type="radio" name="genre" value="homme"> {{ x.homme }}</label>
+            <label><input type="radio" name="genre" value="femme"> {{ x.femme }}</label>
+          </div>
+          <small>{{ x.genre_aide }}</small>
+        </fieldset>
+
+        <fieldset class="champ plan-lits" data-lit hidden>
+          <legend>{{ x.lit }}</legend>
+          <p class="plan-aide">{{ x.plan_aide }}</p>
+          <label class="lit-auto"><input type="radio" name="lit" value="" checked> <span><b>{{ x.lit_peu_importe }}</b><small>{{ x.lit_peu_importe_aide }}</small></span></label>
+          <div class="plan" data-plan role="group" aria-label="{{ x.plan_titre }}"></div>
+          <ul class="legende" aria-hidden="true">
+            <li><i class="l"></i>{{ x.leg_libre }}</li><li><i class="p"></i>{{ x.leg_pris }}</li><li><i class="c"></i>{{ x.leg_choix }}</li>
+          </ul>
+          <p class="choix-lit" data-choix-lit aria-live="polite"></p>
+        </fieldset>
 
         <div class="champs">
           <div class="champ"><label for="r-nom">{{ x.nom }}</label><input id="r-nom" name="nom" autocomplete="name" required maxlength="120"></div>
