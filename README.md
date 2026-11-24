@@ -24,12 +24,12 @@ directement sur github.com, et le site se met à jour tout seul en 1 à 2 minute
 Fichier **`src/donnees/site.json`**, section `"types"` :
 
 ```json
-{ "id": "dortoir", "mois": 80, "trimestre": 240, "nuit": 15, ... }
+{ "id": "dortoir", "mois": 80, "mois_court": 100, "trimestre": 240, "nuit": 15, ... }
 ```
 
-- `mois` = prix par mois, `trimestre` = prix pour 3 mois, `nuit` = prix par nuit (`null` = pas de location à la nuit).
+- `mois` = prix par mois pour un séjour étudiant de 3 mois ou plus, `mois_court` = prix par mois pour un étudiant qui reste moins de 3 mois (justificatif étudiant obligatoire ; `null` = pas de tarif court), `trimestre` = prix pour 3 mois, `nuit` = prix par nuit (`null` = pas de location à la nuit).
 - `"bientot": true` = affiché comme « Bientôt » et non réservable. Mettez `false` quand la nouvelle maison ouvre.
-- Le texte d'accueil « Dès 80 $ / mois · 15 $ la nuit » se trouve dans `src/donnees/fr.json` et `en.json` (`"faits"`) : changez-le aussi.
+- Le texte d'accueil « Dès 80 $ / mois · 15 $ la nuit » se trouve dans `src/donnees/fr.json` et `en.json` (`"faits"`), ainsi que la note de la page Prix (`"note_court"`) et la FAQ « Combien coûte un lit ? » : changez-les aussi.
 - Quand la base Supabase sera active : changez aussi les prix dans **Admin › Lits & prix** (ils servent au calcul des demandes).
 
 ## 3. Changer un texte (FAQ, règlement, équipements…)
