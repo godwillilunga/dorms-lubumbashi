@@ -28,7 +28,7 @@
   --encre: #ECEEF1; --doux: #A3ACB7; --trait: #2C333C; --wa: #0F7A3D; --libre: #4CC183; --pris: #E57367; color-scheme: dark; }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 92px; }
 body { margin: 0; background: var(--fond); color: var(--encre); font: 1rem/1.6 var(--f-texte); }
 img { max-width: 100%; height: auto; }
 [hidden] { display: none !important; }
@@ -52,12 +52,15 @@ a { color: inherit; text-underline-offset: 3px; }
 /* ---------- En-tête ---------- */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ardoise); }
 .entete { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--ardoise); color: #fff; }
-.entete .col { display: flex; align-items: center; gap: .8rem; min-height: 60px; }
+.entete .col { display: flex; align-items: center; gap: .8rem; min-height: 70px; }
+@media (min-width: 760px) { .entete .col { min-height: 80px; } }
 .logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; margin-right: auto; }
-.logo svg { width: 34px; height: 24px; flex: none; }
-.logo b { font-family: var(--f-titre); font-size: 1.15rem; }
-.logo small { display: block; font-size: .58rem; letter-spacing: .32em; color: var(--soleil); text-transform: uppercase; margin-top: -2px; }
-.nav { display: none; gap: 1.2rem; font-size: .93rem; }
+.logo svg { width: 44px; height: 31px; flex: none; }
+@media (min-width: 760px) { .logo svg { width: 52px; height: 37px; } }
+.logo b { font-family: var(--f-titre); font-size: 1.35rem; }
+@media (min-width: 760px) { .logo b { font-size: 1.6rem; } }
+.logo small { display: block; font-size: .66rem; letter-spacing: .32em; color: var(--soleil); text-transform: uppercase; margin-top: -2px; }
+.nav { display: none; gap: 1.3rem; font-size: 1rem; }
 .nav a { text-decoration: none; opacity: .85; }
 .nav a:hover, .nav a[aria-current] { opacity: 1; text-decoration: underline; text-decoration-color: var(--soleil); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .langue { font-size: .8rem; border: 1px solid rgba(255,255,255,.35); border-radius: 99px; padding: .25rem .65rem; text-decoration: none; white-space: nowrap; }
