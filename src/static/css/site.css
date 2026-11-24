@@ -324,7 +324,7 @@ table.cal { border-collapse: collapse; font-size: .75rem; font-variant-numeric: 
 
 /* Vidéo verticale (format téléphone) */
 .lecteur picture { display: contents; }
-.lecteur.vertical { aspect-ratio: 9/16; width: min(100%, 360px); max-height: 80vh; justify-self: center; }
+.lecteur.vertical { aspect-ratio: 9/16; width: 360px; max-width: 100%; max-height: 80vh; justify-self: center; }
 @media (min-width: 860px) { .video-verticale { grid-template-columns: auto 1fr; gap: 2.5rem; } }
 
 /* Réseaux sociaux */
