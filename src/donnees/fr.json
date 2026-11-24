@@ -128,7 +128,7 @@
     "col_mois": "Par mois (3 mois et +)",
     "col_mois_court": "Par mois (moins de 3 mois)",
     "note_court": "Étudiants : le tarif de 80 $/mois s'applique à partir de 3 mois (trimestre). Pour un séjour de moins de 3 mois, le lit est à 100 $/mois. Une preuve du statut d'étudiant est obligatoire (carte d'étudiant ou attestation d'inscription de l'année en cours).",
-    "note_mixte": "The Dorms accueille les étudiants et les étudiantes (garçons et filles). Chaque chambre est soit réservée aux filles, soit réservée aux garçons ; le gérant attribue les chambres.",
+    "note_mixte": "The Dorms accueille les étudiants et les étudiantes (hommes et femmes). Chaque chambre est soit réservée aux femmes, soit réservée aux hommes ; le gérant attribue les chambres.",
     "col_trimestre": "Par trimestre",
     "col_nuit": "Par nuit",
     "calc_titre": "Calculez votre prix",
@@ -180,7 +180,7 @@
   },
 
   "faq": [
-    { "q": "Qui peut loger aux Dorms ?", "r": "Les étudiants et les étudiantes (garçons et filles, chaque chambre étant soit pour filles, soit pour garçons), qui louent un lit au mois, et les voyageurs de passage à Lubumbashi, qui louent un lit à la nuit." },
+    { "q": "Qui peut loger aux Dorms ?", "r": "Les étudiants et les étudiantes (hommes et femmes, chaque chambre étant soit pour femmes, soit pour hommes), qui louent un lit au mois, et les voyageurs de passage à Lubumbashi, qui louent un lit à la nuit." },
     { "q": "Combien coûte un lit ?", "r": "Étudiants : 80 $ par mois pour un séjour de 3 mois ou plus (240 $ le trimestre) ; 100 $ par mois pour un séjour de moins de 3 mois. Une preuve du statut d'étudiant est obligatoire (carte d'étudiant ou attestation d'inscription). Eau et électricité comprises. Voyageurs : 15 $ la nuit." },
     { "q": "Qu'est-ce qui est inclus dans le prix ?", "r": "Le lit avec matelas, draps et oreiller, la cuisine équipée, la douche chaude, le salon avec télévision, le Wi-Fi, l'eau de forage 24h/24 et l'électricité." },
     { "q": "Comment réserver ?", "r": "Remplissez le formulaire de réservation en choisissant vos dates ou vos mois. Nous vérifions et vous répondons sur WhatsApp avec les instructions de paiement. La place est confirmée après le paiement." },
