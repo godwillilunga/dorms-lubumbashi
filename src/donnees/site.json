@@ -54,6 +54,7 @@
     { "id": "facebook",  "nom": "Facebook",  "compte": "The Dorms Lubumbashi", "url": "https://www.facebook.com/profile.php?id=61583102708047" },
     { "id": "instagram", "nom": "Instagram", "compte": "@dorms_lubumbashi",   "url": "https://www.instagram.com/dorms_lubumbashi/" },
     { "id": "tiktok",    "nom": "TikTok",    "compte": "@dormslubumbashi",    "url": "https://www.tiktok.com/@dormslubumbashi" },
+    { "id": "linkedin",  "nom": "LinkedIn",  "compte": "The Dorms Lubumbashi", "url": "https://www.linkedin.com/company/the-dorms-lubumbashi/" },
     { "id": "youtube",   "nom": "YouTube",   "compte": "@TheDormsLubumbashi", "url": "https://www.youtube.com/@TheDormsLubumbashi" }
   ],
 
