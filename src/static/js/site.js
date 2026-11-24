@@ -32,7 +32,8 @@
     var ty = D.type(formule);
     if (client === "etudiant") {
       var n = +o.mois || 1;
-      return { total: n * ty.mois, detail: D.fmt(D.t.detail_mois, { n: n, p: ty.mois }) };
+      var p = (n < 3 && ty.mois_court) ? ty.mois_court : ty.mois;   /* moins de 3 mois : tarif court */
+      return { total: n * p, detail: D.fmt(D.t.detail_mois, { n: n, p: p }) + (p !== ty.mois ? " " + D.t.detail_court : "") };
     }
     var nb = D.nuits(o.arrivee, o.depart);
     if (!o.arrivee || !o.depart) return { total: null, detail: "" };

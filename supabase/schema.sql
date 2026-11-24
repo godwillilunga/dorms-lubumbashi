@@ -21,7 +21,8 @@ create table if not exists maisons (
 
 create table if not exists tarifs (
   type text primary key check (type ~ '^[a-z_]+$'),   -- 'dortoir', 'double', 'individuelle'…
-  mois numeric(10,2) not null check (mois >= 0),
+  mois numeric(10,2) not null check (mois >= 0),           -- séjour étudiant de 3 mois ou plus
+  mois_court numeric(10,2) check (mois_court >= 0),       -- séjour étudiant de moins de 3 mois (null = même prix que mois)
   trimestre numeric(10,2) not null check (trimestre >= 0),
   nuit numeric(10,2) check (nuit >= 0)               -- null = pas de location à la nuit
 );
@@ -204,7 +205,7 @@ begin
   end if;
   if p_client = 'etudiant' then
     v_mois := greatest(1, (extract(year from age(p_fin, p_debut)) * 12 + extract(month from age(p_fin, p_debut)))::int);
-    v_montant := v_mois * t.mois;
+    v_montant := v_mois * case when v_mois < 3 then coalesce(t.mois_court, t.mois) else t.mois end;
   else
     v_montant := (p_fin - p_debut) * coalesce(t.nuit, t.mois);
   end if;
@@ -257,8 +258,8 @@ insert into reglages (cle, valeur) values ('url_projet', 'https://xisadtwihzbksw
 on conflict (cle) do update set valeur = excluded.valeur;
 
 -- ---------- Données de départ (seulement si la base est vide) ----------
-insert into tarifs (type, mois, trimestre, nuit) values
-  ('dortoir', 80, 240, 15), ('double', 90, 270, null), ('individuelle', 120, 360, null)
+insert into tarifs (type, mois, mois_court, trimestre, nuit) values
+  ('dortoir', 80, 100, 240, 15), ('double', 90, null, 270, null), ('individuelle', 120, null, 360, null)
 on conflict (type) do nothing;
 
 insert into reglages (cle, valeur) values

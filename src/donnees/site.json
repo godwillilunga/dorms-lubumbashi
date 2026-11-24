@@ -23,11 +23,11 @@
   },
   "geo": { "lat": -11.637333, "lng": 27.495808 },
 
-  "_prix_aide": "Prix en dollars. 'trimestre' = prix pour 3 mois. 'bientot': true = affiché comme « Bientôt » et pas encore réservable.",
+  "_prix_aide": "Prix en dollars. 'mois' = prix par mois pour un séjour de 3 mois ou plus. 'mois_court' = prix par mois pour un étudiant qui reste MOINS de 3 mois (justificatif étudiant obligatoire ; null = pas de tarif court). 'trimestre' = prix pour 3 mois. 'bientot': true = affiché comme « Bientôt » et pas encore réservable.",
   "types": [
-    { "id": "dortoir",     "mois": 80,  "trimestre": 240, "nuit": 15,   "places": "lit",     "bientot": false },
-    { "id": "double",      "mois": 90,  "trimestre": 270, "nuit": null, "places": "lit",     "bientot": true },
-    { "id": "individuelle","mois": 120, "trimestre": 360, "nuit": null, "places": "chambre", "bientot": true }
+    { "id": "dortoir",     "mois": 80,  "mois_court": 100, "trimestre": 240, "nuit": 15,   "places": "lit",     "bientot": false },
+    { "id": "double",      "mois": 90,  "mois_court": null, "trimestre": 270, "nuit": null, "places": "lit",     "bientot": true },
+    { "id": "individuelle","mois": 120, "mois_court": null, "trimestre": 360, "nuit": null, "places": "chambre", "bientot": true }
   ],
 
   "_maisons_aide": "Description affichée des maisons. Les vrais lits réservables sont gérés dans l'espace admin (base Supabase).",

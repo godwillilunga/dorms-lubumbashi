@@ -295,8 +295,8 @@
       var types = D.tarifs.map(function (t) { return t.type; });
       return '<div class="barre"><h2>Tarifs</h2><button class="btn btn-or btn-petit" data-act="tarifs">Enregistrer les tarifs</button></div>' +
         '<p class="petit" style="margin-bottom:.6rem">Ces prix servent au calcul des demandes. Pensez à mettre les mêmes dans <code>src/donnees/site.json</code> (prix affichés sur le site).</p>' +
-        '<div class="table-wrap" style="margin-bottom:2rem"><table class="donnees"><thead><tr><th>Type</th><th>Mois ($)</th><th>Trimestre ($)</th><th>Nuit ($)</th></tr></thead><tbody>' +
-        D.tarifs.map(function (t) { return "<tr><td>" + e(t.type) + "</td>" + ["mois", "trimestre", "nuit"].map(function (k) { return '<td><input type="number" step="0.01" min="0" style="min-height:36px;width:7rem" data-tarif="' + e(t.type) + '" data-k="' + k + '" value="' + (t[k] == null ? "" : t[k]) + '"></td>'; }).join("") + "</tr>"; }).join("") +
+        '<div class="table-wrap" style="margin-bottom:2rem"><table class="donnees"><thead><tr><th>Type</th><th>Mois, 3 mois et + ($)</th><th>Mois, moins de 3 mois ($)</th><th>Trimestre ($)</th><th>Nuit ($)</th></tr></thead><tbody>' +
+        D.tarifs.map(function (t) { return "<tr><td>" + e(t.type) + "</td>" + ["mois", "mois_court", "trimestre", "nuit"].map(function (k) { return '<td><input type="number" step="0.01" min="0" style="min-height:36px;width:7rem" data-tarif="' + e(t.type) + '" data-k="' + k + '" value="' + (t[k] == null ? "" : t[k]) + '"></td>'; }).join("") + "</tr>"; }).join("") +
         "</tbody></table></div>" +
         '<div class="barre"><h2>Maisons, chambres et lits</h2><button class="btn btn-or btn-petit" data-act="add-maison">+ Maison</button></div>' +
         '<p class="petit" style="margin-bottom:.6rem">Décochez « actif » pour cacher une maison, une chambre ou un lit des réservations. Une chambre individuelle louée entière = une chambre avec un seul lit.</p><div class="arbre">' +
@@ -365,7 +365,7 @@
     else if (act === "csv-paiements") csv("paiements", [["date", "reservation", "nom", "montant", "moyen", "reference", "notes"]]
       .concat(D.paiements.map(function (p) { var x = trouver(p.reservation_id); return [p.date_paiement, x ? ref(x.id) : "", x ? x.nom : "", p.montant, METHODES[p.methode], p.reference, p.notes]; })));
     else if (act === "tarifs") {
-      var maj = D.tarifs.map(function (tf) { var o = { type: tf.type }; ["mois", "trimestre", "nuit"].forEach(function (k) { var v = $('[data-tarif="' + tf.type + '"][data-k="' + k + '"]').value; o[k] = v === "" ? (k === "nuit" ? null : 0) : +v; }); return o; });
+      var maj = D.tarifs.map(function (tf) { var o = { type: tf.type }; ["mois", "mois_court", "trimestre", "nuit"].forEach(function (k) { var v = $('[data-tarif="' + tf.type + '"][data-k="' + k + '"]').value; o[k] = v === "" ? (k === "nuit" || k === "mois_court" ? null : 0) : +v; }); return o; });
       sb.from("tarifs").upsert(maj).then(function (res) { if (res.error) dire(expliquer(res.error), true); else { dire("Tarifs enregistrés"); charger().then(afficher); } });
     }
     else if (act === "add-maison") ouvrir("<h2>Nouvelle maison</h2>" + champ("Nom", "nom", "", "text", " required"), function (v) { return inserer("maisons", { nom: v.nom, ordre: D.maisons.length + 1 }); });

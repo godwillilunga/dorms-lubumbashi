@@ -31,6 +31,7 @@
         <p class="montant">{{ m.usd(dortoir.mois) }} <small>{{ t.ui.par_lit_mois }}</small></p>
         <ul>
           <li>{{ t.ui.trimestre }} : <b>{{ m.usd(dortoir.trimestre) }}</b></li>
+          {% if dortoir.mois_court %}<li>{{ a.etudiant_court }}</li>{% endif %}
           {% for x in a.etudiant_points %}<li>{{ x }}</li>{% endfor %}
         </ul>
         <a class="btn btn-or" href="{{ url('reserver') }}?type=etudiant">{{ a.etudiant_bouton }}</a>

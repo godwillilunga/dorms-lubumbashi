@@ -7,12 +7,13 @@
     <h2 style="margin-bottom:1rem">{{ x.tableau_titre }}</h2>
     <div class="tableau-wrap">
       <table class="grille-prix">
-        <thead><tr><th scope="col">{{ x.col_formule }}</th><th scope="col">{{ x.col_mois }}</th><th scope="col">{{ x.col_trimestre }}</th><th scope="col">{{ x.col_nuit }}</th></tr></thead>
+        <thead><tr><th scope="col">{{ x.col_formule }}</th><th scope="col">{{ x.col_mois }}</th><th scope="col">{{ x.col_mois_court }}</th><th scope="col">{{ x.col_trimestre }}</th><th scope="col">{{ x.col_nuit }}</th></tr></thead>
         <tbody>
           {% for ty in s.types %}
           <tr{% if ty.bientot %} class="futur"{% endif %}>
             <td>{{ t.types[ty.id].nom }}{% if ty.bientot %} <span class="pastille">{{ t.ui.bientot }}</span>{% endif %}</td>
             <td><b>{{ m.usd(ty.mois) }}</b></td>
+            <td>{% if ty.mois_court %}{{ m.usd(ty.mois_court) }}{% else %}–{% endif %}</td>
             <td>{{ m.usd(ty.trimestre) }}</td>
             <td>{% if ty.nuit %}<b>{{ m.usd(ty.nuit) }}</b>{% else %}–{% endif %}</td>
           </tr>
@@ -20,6 +21,8 @@
         </tbody>
       </table>
     </div>
+    <p style="margin-top:1rem">{{ x.note_court }}</p>
+    <p>{{ x.note_mixte }}</p>
   </div>
 </section>
 <section class="prix" id="calcul" aria-labelledby="t-calc">
