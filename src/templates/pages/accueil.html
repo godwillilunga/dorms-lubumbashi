@@ -81,20 +81,7 @@
   </div>
 </section>
 
-{% if s.youtube_id %}
-<section class="sans-haut" aria-labelledby="t-video">
-  <div class="col video">
-    <button class="lecteur" type="button" data-youtube="{{ s.youtube_id }}" aria-label="{{ t.ui.video_bouton }}">
-      <img loading="lazy" src="https://i.ytimg.com/vi/{{ s.youtube_id }}/hqdefault.jpg" alt="" width="480" height="360">
-      <span class="jouer"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></i>{{ t.ui.video_bouton }}</span>
-    </button>
-    <div class="tete" style="margin:0">
-      <h2 id="t-video">{{ a.video_titre }}</h2>
-      <p>{{ a.video_texte }}</p>
-    </div>
-  </div>
-</section>
-{% endif %}
+{% if s.youtube_id %}{{ m.video(a.video_titre, a.video_texte) }}{% endif %}
 
 {% if s.temoignages %}
 <section class="sans-haut" aria-labelledby="t-temoins">

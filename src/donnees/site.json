@@ -46,7 +46,10 @@
   ],
 
   "_youtube_aide": "Collez ici l'identifiant de votre vidéo YouTube (la partie après v= dans le lien). Vide = la section vidéo est cachée.",
-  "youtube_id": "",
+  "youtube_id": "SBp9l9pjoI8",
+  "youtube_vertical": true,
+  "youtube_chaine": "https://www.youtube.com/@TheDormsLubumbashi",
+  "profils": ["https://www.youtube.com/@TheDormsLubumbashi"],
 
   "_supabase_aide": "Rempli à l'étape 4. La clé 'anon' est publique par conception ; les données sont protégées par les règles RLS.",
   "supabase_url": "https://xisadtwihzbkswnwssfd.supabase.co",

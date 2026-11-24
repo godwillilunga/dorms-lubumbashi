@@ -20,6 +20,8 @@
   </div>
 </section>
 
+{% if s.youtube_id %}{{ m.video(t.accueil.video_titre, t.accueil.video_texte, "t-video-ch") }}{% endif %}
+
 <section class="sans-haut" id="dispo" aria-labelledby="t-dispo">
   <div class="col">
     <div class="tete">

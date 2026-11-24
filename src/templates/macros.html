@@ -48,3 +48,20 @@
   </div>
 </div>
 {%- endmacro %}
+
+{# Visite vidéo YouTube : se charge seulement au clic (économie de données). #}
+{% macro video(titre, texte, hid="t-video") -%}
+<section class="sans-haut" id="video" aria-labelledby="{{ hid }}">
+  <div class="col video{% if s.youtube_vertical %} video-verticale{% endif %}">
+    <button class="lecteur{% if s.youtube_vertical %} vertical{% endif %}" type="button" data-youtube="{{ s.youtube_id }}" aria-label="{{ t.ui.video_bouton }}">
+      {{ pic('chambre-1', sizes="(min-width: 860px) 360px, 90vw", alt="") }}
+      <span class="jouer"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></i>{{ t.ui.video_bouton }}</span>
+    </button>
+    <div class="tete" style="margin:0">
+      <h2 id="{{ hid }}">{{ titre }}</h2>
+      <p>{{ texte }}</p>
+      {% if s.youtube_chaine %}<p><a class="lien-fleche" href="https://www.youtube.com/shorts/{{ s.youtube_id }}" target="_blank" rel="noopener">{{ t.ui.video_youtube }} →</a></p>{% endif %}
+    </div>
+  </div>
+</section>
+{%- endmacro %}
