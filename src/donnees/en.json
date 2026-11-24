@@ -11,7 +11,7 @@
     "acces":       { "slug": "location",    "nav": "Location",    "titre": "Location and Map: Quartier Industriel, Lubumbashi | The Dorms", "description": "The Dorms: 24 Avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, on the British International School road. Map, directions and distances.", "h1": "How to find The Dorms" },
     "reglement":   { "slug": "house-rules", "nav": "House rules", "titre": "House Rules | The Dorms Lubumbashi", "description": "House rules at The Dorms Lubumbashi: quiet hours 10 pm to 6 am, visitors, cleaning, safety. A calm place to study and rest.", "h1": "House rules" },
     "faq":         { "slug": "faq",         "nav": "FAQ",         "titre": "FAQ: Hostel and Dorm in Lubumbashi | The Dorms", "description": "Answers about The Dorms Lubumbashi: prices, booking, Mobile Money payment, visits, safety, water and power.", "h1": "Frequently asked questions" },
-    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact and WhatsApp | The Dorms Lubumbashi", "description": "Contact The Dorms Lubumbashi on WhatsApp or by phone at +243 863 472 047. Open 24/7, visits by appointment.", "h1": "Contact us" },
+    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact and WhatsApp | The Dorms Lubumbashi", "description": "Contact The Dorms Lubumbashi on WhatsApp at +243 855 847 085 (instant reply 24/7) or by phone at +243 863 472 047. Open 24/7, visits by appointment.", "h1": "Contact us" },
     "reserver":    { "slug": "book",        "nav": "Book",        "titre": "Book a Bed in Lubumbashi | The Dorms", "description": "Request your bed at The Dorms Lubumbashi in 2 minutes: pick your dates or months, send the request, and we confirm on WhatsApp.", "h1": "Booking request" }
   },
 
@@ -25,6 +25,8 @@
     "ecrire_wa": "Chat on WhatsApp",
     "wa_message": "Hello The Dorms, I would like information about a bed.",
     "appeler": "Call",
+    "wa_24h": "instant reply 24/7",
+    "gerant": "manager",
     "des": "From",
     "par_mois": "/ month",
     "par_lit_mois": "/ bed / month",
@@ -177,7 +179,7 @@
     { "q": "What is included in the price?", "r": "Your bed with mattress, sheets and pillow, the equipped kitchen, hot shower, lounge with TV, Wi-Fi, 24/7 borehole water and electricity." },
     { "q": "How do I book?", "r": "Fill in the booking form with your dates or months. We check and reply on WhatsApp with payment instructions. Your place is confirmed once paid." },
     { "q": "How do I pay?", "r": "In cash on site, or by M-Pesa, Orange Money or Airtel Money, only after we confirm. We never take automatic online payments." },
-    { "q": "Can I visit before booking?", "r": "Yes, by appointment. Call us or send a WhatsApp message to +243 863 472 047." },
+    { "q": "Can I visit before booking?", "r": "Yes, by appointment. Send a WhatsApp message to +243 855 847 085 or call +243 863 472 047." },
     { "q": "Are the rooms shared?", "r": "Yes, each room in the current house has 4 beds (bunk beds). Double and single rooms are coming soon in the new house." },
     { "q": "Is it safe?", "r": "Yes. The plot is enclosed by a solid wall with a gate, and two attendants are on site 24/7." },
     { "q": "Are there water or power cuts?", "r": "Water comes from our borehole with a self-filling tank, available 24/7. Electricity is constant." },
