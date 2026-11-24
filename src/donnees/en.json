@@ -128,7 +128,7 @@
     "col_mois": "Per month (3 months +)",
     "col_mois_court": "Per month (under 3 months)",
     "note_court": "Students: the $80/month rate applies from 3 months (one term). For a stay of less than 3 months, a bed is $100/month. Proof of student status is required (student card or current-year enrolment certificate).",
-    "note_mixte": "The Dorms welcomes both male and female students.",
+    "note_mixte": "The Dorms welcomes both male and female students. Each room is either girls-only or boys-only; the manager assigns the rooms.",
     "col_trimestre": "Per term",
     "col_nuit": "Per night",
     "calc_titre": "Work out your price",
@@ -180,7 +180,7 @@
   },
 
   "faq": [
-    { "q": "Who can stay at The Dorms?", "r": "Male and female students, who rent a bed by the month, and travellers passing through Lubumbashi, who rent a bed by the night." },
+    { "q": "Who can stay at The Dorms?", "r": "Male and female students (each room is either girls-only or boys-only), who rent a bed by the month, and travellers passing through Lubumbashi, who rent a bed by the night." },
     { "q": "How much is a bed?", "r": "Students: $80 per month for a stay of 3 months or more ($240 per term); $100 per month for a stay of less than 3 months. Proof of student status is required (student card or enrolment certificate). Water and electricity included. Travellers: $15 per night." },
     { "q": "What is included in the price?", "r": "Your bed with mattress, sheets and pillow, the equipped kitchen, hot shower, lounge with TV, Wi-Fi, 24/7 borehole water and electricity." },
     { "q": "How do I book?", "r": "Fill in the booking form with your dates or months. We check and reply on WhatsApp with payment instructions. Your place is confirmed once paid." },
