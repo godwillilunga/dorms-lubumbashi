@@ -118,7 +118,10 @@
       var f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(b.getAttribute("data-youtube")) + "?autoplay=1&rel=0";
       f.title = b.getAttribute("aria-label"); f.allow = "autoplay; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
-      b.innerHTML = ""; b.appendChild(f); b.removeAttribute("aria-label");
+      // Un <iframe> dans un <button> joue le son mais ne s'affiche pas (Chrome) : on remplace le bouton par un <div>
+      var cadre = document.createElement("div");
+      cadre.className = b.className; cadre.appendChild(f);
+      b.parentNode.replaceChild(cadre, b);
     }, { once: true });
   });
 
