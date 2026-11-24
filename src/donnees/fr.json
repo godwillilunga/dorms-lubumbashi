@@ -87,7 +87,7 @@
   "equipements": [
     { "icone": "lit",      "titre": "Lits confortables",         "texte": "Matelas, draps et oreillers fournis." },
     { "icone": "cuisine",  "titre": "Cuisine équipée",            "texte": "Cuisinière, réfrigérateur et ustensiles." },
-    { "icone": "douche",   "titre": "Douche chaude",              "texte": "Salle de bain avec chauffe-eau." },
+    { "icone": "douche",   "titre": "Douche chaude",              "texte": "Une salle de bain avec chauffe-eau, partagée par les deux chambres." },
     { "icone": "tv",       "titre": "Salon avec télévision",      "texte": "Canapé et coin repas partagés." },
     { "icone": "eau",      "titre": "Eau de forage 24h/24",       "texte": "Réservoir à remplissage automatique." },
     { "icone": "courant",  "titre": "Électricité permanente",     "texte": "Pour étudier le soir sans coupure." },

@@ -87,7 +87,7 @@
   "equipements": [
     { "icone": "lit",      "titre": "Comfortable beds",        "texte": "Mattress, sheets and pillows provided." },
     { "icone": "cuisine",  "titre": "Equipped kitchen",        "texte": "Cooker, fridge and utensils." },
-    { "icone": "douche",   "titre": "Hot shower",              "texte": "Bathroom with water heater." },
+    { "icone": "douche",   "titre": "Hot shower",              "texte": "One bathroom with water heater, shared by the two rooms." },
     { "icone": "tv",       "titre": "Lounge with TV",          "texte": "Shared sofa and dining area." },
     { "icone": "eau",      "titre": "24/7 borehole water",     "texte": "Self-filling water tank." },
     { "icone": "courant",  "titre": "Constant electricity",    "texte": "Study in the evening without power cuts." },
