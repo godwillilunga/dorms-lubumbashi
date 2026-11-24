@@ -11,7 +11,7 @@
     "acces":       { "slug": "acces",       "nav": "Accès",       "titre": "Accès et plan : Quartier Industriel, Lubumbashi | The Dorms", "description": "The Dorms : 24, avenue Mungunzi prolongé, Quartier Industriel, Lubumbashi, sur la route de la British International School. Carte, itinéraire et distances.", "h1": "Comment venir aux Dorms" },
     "reglement":   { "slug": "reglement",   "nav": "Règlement",   "titre": "Règlement intérieur | The Dorms Lubumbashi", "description": "Les règles de vie des Dorms Lubumbashi : calme de 22 h à 6 h, visites, propreté, sécurité. Un cadre serein pour étudier et se reposer.", "h1": "Règlement intérieur" },
     "faq":         { "slug": "faq",         "nav": "FAQ",         "titre": "Questions fréquentes : dortoir et auberge à Lubumbashi | The Dorms", "description": "Réponses aux questions sur The Dorms Lubumbashi : prix, réservation, paiement Mobile Money, visites, sécurité, eau et électricité.", "h1": "Questions fréquentes" },
-    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact et WhatsApp | The Dorms Lubumbashi", "description": "Contactez The Dorms Lubumbashi sur WhatsApp au +243 855 847 085 (réponse immédiate 24h/24) ou par téléphone au +243 863 472 047. Ouvert 24h/24, visites sur rendez-vous.", "h1": "Nous contacter" },
+    "contact":     { "slug": "contact",     "nav": "Contact",     "titre": "Contact et WhatsApp | The Dorms Lubumbashi", "description": "Contactez The Dorms Lubumbashi sur WhatsApp au +243 855 847 085 (réponse immédiate 24h/24) ou par téléphone au +243 975 898 600. Ouvert 24h/24, visites sur rendez-vous.", "h1": "Nous contacter" },
     "reserver":    { "slug": "reserver",    "nav": "Réserver",    "titre": "Réserver un lit à Lubumbashi | The Dorms", "description": "Demandez votre lit aux Dorms Lubumbashi en 2 minutes : choisissez vos dates ou vos mois, envoyez la demande, nous confirmons par WhatsApp.", "h1": "Demande de réservation" }
   },
 
@@ -27,6 +27,7 @@
     "appeler": "Appeler",
     "wa_24h": "réponse immédiate 24h/24",
     "gerant": "gérant",
+    "appels": "Appels téléphoniques",
     "des": "Dès",
     "par_mois": "/ mois",
     "par_lit_mois": "/ lit / mois",
@@ -179,7 +180,7 @@
     { "q": "Qu'est-ce qui est inclus dans le prix ?", "r": "Le lit avec matelas, draps et oreiller, la cuisine équipée, la douche chaude, le salon avec télévision, le Wi-Fi, l'eau de forage 24h/24 et l'électricité." },
     { "q": "Comment réserver ?", "r": "Remplissez le formulaire de réservation en choisissant vos dates ou vos mois. Nous vérifions et vous répondons sur WhatsApp avec les instructions de paiement. La place est confirmée après le paiement." },
     { "q": "Comment payer ?", "r": "En espèces sur place, ou par M-Pesa, Orange Money ou Airtel Money, seulement après notre confirmation. Nous ne prenons jamais de paiement automatique en ligne." },
-    { "q": "Puis-je visiter avant de réserver ?", "r": "Oui, sur rendez-vous. Écrivez sur WhatsApp au +243 855 847 085 ou appelez le +243 863 472 047." },
+    { "q": "Puis-je visiter avant de réserver ?", "r": "Oui, sur rendez-vous. Écrivez sur WhatsApp au +243 855 847 085 ou appelez le +243 975 898 600." },
     { "q": "Les chambres sont-elles partagées ?", "r": "Oui, chaque chambre de la maison actuelle a 4 lits (lits superposés). Des chambres doubles et individuelles arrivent bientôt dans la nouvelle maison." },
     { "q": "Le logement est-il sécurisé ?", "r": "Oui. La parcelle est clôturée avec un mur solide et un portail, et deux agents sont présents sur place 24h/24." },
     { "q": "Y a-t-il des coupures d'eau ou d'électricité ?", "r": "L'eau vient de notre forage avec un réservoir à remplissage automatique, disponible 24h/24. L'électricité est permanente." },
