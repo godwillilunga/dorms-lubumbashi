@@ -326,3 +326,11 @@ table.cal { border-collapse: collapse; font-size: .75rem; font-variant-numeric: 
 .lecteur picture { display: contents; }
 .lecteur.vertical { aspect-ratio: 9/16; width: min(100%, 360px); max-height: 80vh; justify-self: center; }
 @media (min-width: 860px) { .video-verticale { grid-template-columns: auto 1fr; gap: 2.5rem; } }
+
+/* Réseaux sociaux */
+.reseaux { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; columns: auto; }
+.reseaux a { display: inline-flex; align-items: center; gap: .45rem; min-width: 44px; min-height: 44px; justify-content: center; padding: 0 .7rem; border-radius: 999px; border: 1.5px solid var(--trait); color: var(--encre); text-decoration: none; font-weight: 600; font-size: .9rem; }
+.reseaux a:hover { border-color: var(--soleil); background: color-mix(in srgb, var(--soleil) 12%, var(--fond)); }
+.reseaux svg { width: 20px; height: 20px; fill: currentColor; }
+.pied .reseaux li { padding: 0; }
+.pied .suivre { display: block; margin-top: 1rem; }

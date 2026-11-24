@@ -28,6 +28,11 @@
       <b>{{ t.ui.ouvert }}</b>
       <span style="color:var(--doux)">{{ 'Visites sur rendez-vous, par WhatsApp ou par téléphone.' if lang == 'fr' else 'Visits by appointment, via WhatsApp or phone.' }}</span>
     </div>
+    {% if s.reseaux %}<div class="contact-carte">
+      <b>{{ t.ui.suivez_nous }}</b>
+      <span style="color:var(--doux)">{{ t.ui.suivez_texte }}</span>
+      {{ m.reseaux(true) }}
+    </div>{% endif %}
   </div>
 </section>
 <section class="sans-haut">

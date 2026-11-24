@@ -71,6 +71,7 @@
         {% if s.email %}<span>E-mail : <a href="mailto:{{ s.email }}">{{ s.email }}</a></span>{% endif %}
         <span>{{ t.ui.ouvert }}</span>
       </address>
+      {% if s.reseaux %}<b class="suivre">{{ t.ui.suivez_nous }}</b>{{ m.reseaux() }}{% endif %}
     </div>
     <nav aria-label="{{ t.ui.plan_site }}">
       <b>{{ t.ui.plan_site }}</b>

@@ -151,7 +151,7 @@ def jsonld(S, t, lang, cle, absolu):
         "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": e["titre"], "value": True} for e in t["equipements"]],
         "numberOfRooms": sum(len(m["chambres"]) for m in S["maisons"] if not m["bientot"]),
         "availableLanguage": ["French", "English"],
-        "sameAs": S.get("profils", []),
+        "sameAs": [r["url"] for r in S.get("reseaux", [])],
     }
     graphe = []
     if cle in ("accueil", "contact", "acces", "prix"):

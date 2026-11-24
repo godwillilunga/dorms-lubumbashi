@@ -49,7 +49,13 @@
   "youtube_id": "SBp9l9pjoI8",
   "youtube_vertical": true,
   "youtube_chaine": "https://www.youtube.com/@TheDormsLubumbashi",
-  "profils": ["https://www.youtube.com/@TheDormsLubumbashi"],
+  "_reseaux_aide": "Pages officielles sur les réseaux sociaux (affichées dans le pied de page et la page Contact, et déclarées à Google).",
+  "reseaux": [
+    { "id": "facebook",  "nom": "Facebook",  "compte": "The Dorms Lubumbashi", "url": "https://www.facebook.com/profile.php?id=61583102708047" },
+    { "id": "instagram", "nom": "Instagram", "compte": "@dorms_lubumbashi",   "url": "https://www.instagram.com/dorms_lubumbashi/" },
+    { "id": "tiktok",    "nom": "TikTok",    "compte": "@dormslubumbashi",    "url": "https://www.tiktok.com/@dormslubumbashi" },
+    { "id": "youtube",   "nom": "YouTube",   "compte": "@TheDormsLubumbashi", "url": "https://www.youtube.com/@TheDormsLubumbashi" }
+  ],
 
   "_supabase_aide": "Rempli à l'étape 4. La clé 'anon' est publique par conception ; les données sont protégées par les règles RLS.",
   "supabase_url": "https://xisadtwihzbkswnwssfd.supabase.co",
