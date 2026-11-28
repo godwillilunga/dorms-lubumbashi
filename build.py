@@ -81,7 +81,7 @@ def main():
             config = {
                 "lang": lang, "whatsapp": S["whatsapp"],
                 "types": [{k: ty[k] for k in ("id", "mois", "mois_court", "trimestre", "nuit")} for ty in S["types"]],
-                "sb": {"url": S["supabase_url"], "key": S["supabase_anon_key"]},
+                "sb": {"url": S["supabase_url"], "key": S["supabase_anon_key"]}, "turnstile": S.get("turnstile_site_key"),
                 "t": {**{k: v for k, v in t["reserver_page"].items() if isinstance(v, str)},
                       **{k: v for k, v in t["chambres_page"].items() if k.startswith("dispo")},
                       "detail_mois": t["prix_page"]["calc_detail_mois"], "detail_court": t["prix_page"]["calc_detail_court"], "detail_nuits": t["prix_page"]["calc_detail_nuits"]},

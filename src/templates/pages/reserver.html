@@ -65,6 +65,7 @@
         </div>
         <p class="alerte" data-erreur hidden></p>
         <p class="info" data-hors-ligne hidden>{{ x.hors_ligne }}</p>
+        <div class="turnstile" data-turnstile></div>
         <button class="btn btn-or" type="submit" data-envoyer>{{ x.envoyer }}</button>
       </form>
 
@@ -90,4 +91,5 @@
   </div>
 </section>
 {% endblock %}
-{% block scripts %}<script src="{{ static('js/reserver.js') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="{{ static('js/reserver.js') }}" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>{% endblock %}

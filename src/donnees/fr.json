@@ -252,6 +252,7 @@
     "envoyer_wa": "Envoyer la demande sur WhatsApp",
     "erreur_dates": "Choisissez une date de départ après la date d'arrivée.",
     "erreur_pris": "Ce lit n'est plus libre à ces dates. Choisissez un autre lit ou d'autres dates.",
+    "erreur_robot": "Merci de compléter la vérification anti-robot juste au-dessus du bouton, puis réessayez.",
     "erreur_reseau": "La demande n'a pas pu être envoyée. Vérifiez votre connexion et réessayez, ou utilisez WhatsApp.",
     "aucun_lit": "Aucun lit libre pour toute cette période. Essayez d'autres dates, ou écrivez-nous sur WhatsApp.",
     "erreur_champs": "Remplissez votre nom et votre numéro de téléphone.",

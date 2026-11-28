@@ -252,6 +252,7 @@
     "envoyer_wa": "Send the request on WhatsApp",
     "erreur_dates": "Pick a check-out date after the check-in date.",
     "erreur_pris": "This bed is no longer free on those dates. Choose another bed or other dates.",
+    "erreur_robot": "Please complete the anti-bot check just above the button, then try again.",
     "erreur_reseau": "The request could not be sent. Check your connection and try again, or use WhatsApp.",
     "aucun_lit": "No bed is free for that whole period. Try other dates, or message us on WhatsApp.",
     "erreur_champs": "Fill in your name and phone number.",

@@ -60,6 +60,7 @@
 
   "_supabase_aide": "Rempli à l'étape 4. La clé 'anon' est publique par conception ; les données sont protégées par les règles RLS.",
   "supabase_url": "https://xisadtwihzbkswnwssfd.supabase.co",
+  "turnstile_site_key": "0x4AAAAAAGWx11K9YhdvZ6TS",
   "supabase_anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhpc2FkdHdpaHpia3N3bndzc2ZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU0MTMyODAsImV4cCI6MjExMDk4OTI4MH0.4W1wqahd3FYxWTDI0_I5JtDQF8ORdV9mkgRfvvCo0q8",
 
   "photos": [

@@ -334,3 +334,7 @@ table.cal { border-collapse: collapse; font-size: .75rem; font-variant-numeric: 
 .reseaux svg { width: 20px; height: 20px; fill: currentColor; }
 .pied .reseaux li { padding: 0; }
 .pied .suivre { display: block; margin-top: 1rem; }
+
+/* Anti-robot Cloudflare Turnstile (page Réserver) : place réservée pour éviter les sauts de mise en page */
+.turnstile { min-height: 65px; }
+.turnstile:empty { min-height: 0; }

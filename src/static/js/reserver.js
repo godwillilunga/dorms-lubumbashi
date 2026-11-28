@@ -134,6 +134,26 @@
     return l.join("\n");
   };
 
+  // Anti-robot Cloudflare Turnstile : le widget s'affiche au-dessus du bouton ; la fonction Edge « reserver » vérifie le jeton.
+  var zoneTs = $("[data-turnstile]"), idTs = null;
+  var afficherTs = function () {
+    if (idTs !== null || !zoneTs || !D.enLigne || !D.turnstile) return;
+    if (!window.turnstile) { setTimeout(afficherTs, 300); return; }
+    idTs = window.turnstile.render(zoneTs, { sitekey: D.turnstile, language: D.lang, action: "reservation" });
+  };
+  afficherTs();
+  var jetonTs = function () { return idTs !== null && window.turnstile ? window.turnstile.getResponse(idTs) || "" : ""; };
+  var envoyer = function (args) {
+    return fetch(D.sb.url + "/functions/v1/reserver", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(args)
+    }).then(function (r) {
+      return r.json().catch(function () { return null; }).then(function (j) {
+        if (!r.ok) { var e = new Error((j && j.message) || r.statusText); e.code = j && j.code; e.detail = j; throw e; }
+        return j;
+      });
+    });
+  };
+
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     if (f.site.value) return; // piège à robots
@@ -146,9 +166,11 @@
     montrerErreur("");
     if (!D.enLigne) { window.open(D.waLien(recap()), "_blank", "noopener"); return; }
 
+    var jeton = jetonTs();
+    if (D.turnstile && !jeton) { montrerErreur(T.erreur_robot); return; }
     var p = periode();
     btn.disabled = true; btn.textContent = T.envoi;
-    D.supabase("demander_reservation", {
+    envoyer({ jeton: jeton,
       p_client: client(), p_formule: f.formule.value, p_debut: p.debut, p_fin: p.fin,
       p_lit: litChoisi(),
       p_nom: f.nom.value.trim(), p_telephone: f.telephone.value.trim(),
@@ -162,8 +184,12 @@
       f.hidden = true; var s = $("[data-succes]"); s.hidden = false; s.focus();
     }).catch(function (err) {
       var pris = /LIT_PRIS|COMPLET|23P01/.test((err && (err.message + " " + err.code)) || "");
-      montrerErreur(pris ? T.erreur_pris : T.erreur_reseau);
+      var robot = /^TURNSTILE/.test((err && err.message) || "");
+      montrerErreur(pris ? T.erreur_pris : robot ? T.erreur_robot : T.erreur_reseau);
       if (pris) { dernier = ""; chargerLits(); }
-    }).then(function () { btn.disabled = false; btn.textContent = T.envoyer; });
+    }).then(function () {
+      btn.disabled = false; btn.textContent = T.envoyer;
+      if (idTs !== null && window.turnstile) window.turnstile.reset(idTs); // un jeton ne sert qu'une fois
+    });
   });
 })();
