@@ -103,11 +103,24 @@ async function autorise(req: Request) {
   return !!adm;
 }
 
+// Le bouton « Synchroniser maintenant » de l'admin appelle la fonction depuis le site : il faut l'autoriser (CORS),
+// et seulement depuis le site lui-même.
+const SITES = ["https://dormslubumbashi.com", "https://www.dormslubumbashi.com"];
+function cors(req: Request): Record<string, string> {
+  const o = req.headers.get("Origin") || "";
+  if (!SITES.includes(o)) return {};
+  return { "Access-Control-Allow-Origin": o, "Vary": "Origin", "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "authorization, content-type, apikey, x-client-info" };
+}
+
 Deno.serve(async (req) => {
   const u = new URL(req.url);
+  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(req) });
   if (u.searchParams.get("sync")) {
-    if (!(await autorise(req))) return new Response(JSON.stringify({ erreur: "Non autorisé" }), { status: 401, headers: { "Content-Type": "application/json" } });
-    return synchroniser();
+    const h = { "Content-Type": "application/json", ...cors(req) };
+    if (!(await autorise(req))) return new Response(JSON.stringify({ erreur: "Non autorisé" }), { status: 401, headers: h });
+    const rep = await synchroniser();
+    return new Response(await rep.text(), { status: rep.status, headers: h });
   }
   const jeton = u.searchParams.get("jeton");
   if (jeton) return exporter(jeton.replace(/\.ics$/, ""));
