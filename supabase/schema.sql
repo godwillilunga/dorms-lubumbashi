@@ -113,7 +113,7 @@ language sql stable security definer set search_path = public as $$
   select exists (select 1 from admins where user_id = auth.uid());
 $$;
 
-create or replace function maj_updated_at() returns trigger language plpgsql as $$
+create or replace function maj_updated_at() returns trigger language plpgsql set search_path = public as $$
 begin new.updated_at = now(); return new; end $$;
 drop trigger if exists reservations_updated on reservations;
 create trigger reservations_updated before update on reservations for each row execute function maj_updated_at();
@@ -192,8 +192,18 @@ begin
   if coalesce(trim(p_nom), '') = '' or length(regexp_replace(coalesce(p_telephone, ''), '\D', '', 'g')) < 8 then
     raise exception 'CHAMPS_MANQUANTS';
   end if;
-  -- anti-abus : 3 demandes en attente maximum par numéro et par heure
-  if (select count(*) from reservations where telephone = trim(p_telephone) and created_at > now() - interval '1 hour') >= 3 then
+  -- anti-abus : tailles maximales (le formulaire limite déjà à 120 / 1000 caractères)
+  if length(p_nom) > 150 or length(p_telephone) > 40 or length(coalesce(p_email, '')) > 200
+     or length(coalesce(p_universite, '')) > 200 or length(coalesce(p_message, '')) > 2000 then
+    raise exception 'CHAMP_TROP_LONG';
+  end if;
+  -- anti-abus : 3 demandes maximum par numéro (chiffres seuls) et par heure…
+  if (select count(*) from reservations where source = 'site' and created_at > now() - interval '1 hour'
+        and regexp_replace(telephone, '\D', '', 'g') = regexp_replace(p_telephone, '\D', '', 'g')) >= 3 then
+    raise exception 'TROP_DE_DEMANDES';
+  end if;
+  -- … et 20 demandes maximum par heure pour tout le site (protège la base et le quota d'e-mails)
+  if (select count(*) from reservations where source = 'site' and created_at > now() - interval '1 hour') >= 20 then
     raise exception 'TROP_DE_DEMANDES';
   end if;
   if p_lit is not null then
@@ -223,6 +233,9 @@ grant execute on function lits_libres(date, date, text), calendrier_public(date,
   demander_reservation(text, text, date, date, bigint, text, text, text, text, text, text) to anon, authenticated;
 revoke all on function libelle_lit(bigint) from public, anon;
 grant execute on function libelle_lit(bigint) to authenticated, service_role;
+-- est_admin() sert aux règles RLS des administrateurs connectés : inutile pour le public.
+revoke all on function est_admin() from public, anon;
+grant execute on function est_admin() to authenticated, service_role;
 
 -- ---------- Notification e-mail à chaque nouvelle demande ----------
 -- Appelle la fonction Edge « notifier » (qui envoie l'e-mail via Resend).
@@ -239,17 +252,27 @@ begin
   end if;
   return new;
 end $$;
+-- Fonction de déclencheur uniquement : personne ne doit pouvoir l'appeler par l'API.
+revoke all on function appeler_notifier() from public, anon, authenticated;
 drop trigger if exists reservations_notifier on reservations;
 create trigger reservations_notifier after insert on reservations
   for each row when (new.source = 'site') execute function appeler_notifier();
 
 -- ---------- Tâches automatiques (pg_cron) ----------
+-- Clé secrète de la synchronisation Airbnb : générée ici, elle ne quitte jamais la base
+-- (la fonction « ical » la relit avec la clé serveur). Sans elle, seul un administrateur connecté peut lancer la synchro.
+insert into reglages (cle, valeur)
+values ('cle_sync', replace(gen_random_uuid()::text || gen_random_uuid()::text, '-', ''))
+on conflict (cle) do nothing;
+
 -- Synchronisation Airbnb toutes les 30 minutes.
 do $$ begin perform cron.unschedule('dorms-ical-sync'); exception when others then null; end $$;
 select cron.schedule('dorms-ical-sync', '*/30 * * * *', $c$
   select net.http_post(
     url := (select valeur from public.reglages where cle = 'url_projet') || '/functions/v1/ical?sync=1',
-    headers := jsonb_build_object('Content-Type', 'application/json'), body := '{}'::jsonb)
+    headers := jsonb_build_object('Content-Type', 'application/json',
+                 'x-cle-sync', (select valeur from public.reglages where cle = 'cle_sync')),
+    body := '{}'::jsonb)
   where exists (select 1 from public.sources_ical where url_import is not null);
 $c$);
 

@@ -376,7 +376,7 @@
     else if (act === "add-source") ouvrir("<h2>Relier une annonce Airbnb</h2>" + champ("Nom de l'annonce", "nom", "Airbnb", "text", " required") + choix("Lit représenté par cette annonce", "lit", litsActifs().map(function (l) { return [l.id, libLit(l.id)]; })) + champ("Lien Airbnb (export iCal)", "url", "", "url"),
       function (v) { return inserer("sources_ical", { nom: v.nom, lit_id: +v.lit, url_import: v.url || null }); });
     else if (act === "save-source") sb.from("sources_ical").update({ url_import: $("#src-" + id).value.trim() || null }).eq("id", +id).then(function (res) { if (res.error) dire(expliquer(res.error), true); else { dire("Lien enregistré"); charger().then(afficher); } });
-    else if (act === "sync") { dire("Synchronisation…"); fetch(CFG.url + "/functions/v1/ical?sync=1", { method: "POST", headers: { Authorization: "Bearer " + CFG.key } }).then(function (x) { return x.json(); })
+    else if (act === "sync") { dire("Synchronisation…"); sb.auth.getSession().then(function (r) { var t = r.data.session ? r.data.session.access_token : ""; return fetch(CFG.url + "/functions/v1/ical?sync=1", { method: "POST", headers: { Authorization: "Bearer " + t } }); }).then(function (x) { if (!x.ok) throw new Error("HTTP " + x.status); return x.json(); })
       .then(function (j) { dire(Object.values(j).join(" · ") || "Aucune annonce à synchroniser"); return charger().then(afficher); }).catch(function (er) { dire("Échec : " + er.message, true); }); }
     else if (act === "copier") { navigator.clipboard.writeText(b.getAttribute("data-val")).then(function () { dire("Lien copié"); }, function () { dire("Copiez le lien à la main", true); }); }
   });

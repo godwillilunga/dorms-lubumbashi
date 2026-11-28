@@ -1,6 +1,7 @@
 // Fonction Edge « ical » (à déployer SANS vérification JWT, car Airbnb ne peut pas envoyer de clé).
 //   GET  …/functions/v1/ical?jeton=XXXX   -> calendrier iCal des dates occupées du lit (à donner à Airbnb)
 //   POST …/functions/v1/ical?sync=1       -> importe les calendriers Airbnb (appelé toutes les 30 min par pg_cron)
+//        réservé à pg_cron (en-tête x-cle-sync = reglages.cle_sync) ou à un administrateur connecté (bouton de l'admin)
 // L'export ne contient aucune donnée personnelle : seulement « Réservé » et des dates.
 import { createClient } from "npm:@supabase/supabase-js@2.45.4";
 
@@ -86,9 +87,28 @@ async function synchroniser() {
   return new Response(JSON.stringify(bilan), { headers: { "Content-Type": "application/json" } });
 }
 
-Deno.serve((req) => {
+// La synchro est-elle autorisée ? Clé secrète de pg_cron, ou jeton de session d'un administrateur.
+async function autorise(req: Request) {
+  const db = sb();
+  const cle = req.headers.get("x-cle-sync");
+  if (cle) {
+    const { data } = await db.from("reglages").select("valeur").eq("cle", "cle_sync").maybeSingle();
+    return !!data?.valeur && data.valeur === cle;
+  }
+  const jwt = (req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
+  if (!jwt) return false;
+  const { data: { user } } = await db.auth.getUser(jwt);
+  if (!user) return false;
+  const { data: adm } = await db.from("admins").select("user_id").eq("user_id", user.id).maybeSingle();
+  return !!adm;
+}
+
+Deno.serve(async (req) => {
   const u = new URL(req.url);
-  if (u.searchParams.get("sync")) return synchroniser();
+  if (u.searchParams.get("sync")) {
+    if (!(await autorise(req))) return new Response(JSON.stringify({ erreur: "Non autorisé" }), { status: 401, headers: { "Content-Type": "application/json" } });
+    return synchroniser();
+  }
   const jeton = u.searchParams.get("jeton");
   if (jeton) return exporter(jeton.replace(/\.ics$/, ""));
   return new Response("The Dorms iCal", { status: 400 });
