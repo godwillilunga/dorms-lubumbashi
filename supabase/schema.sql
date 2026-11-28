@@ -119,7 +119,8 @@ drop trigger if exists reservations_updated on reservations;
 create trigger reservations_updated before update on reservations for each row execute function maj_updated_at();
 
 -- ---------- Sécurité : Row Level Security ----------
--- Le public (clé « anon ») n'a AUCUN accès direct aux tables : il passe seulement par les 3 fonctions ci-dessous,
+-- Le public (clé « anon ») n'a AUCUN accès direct aux tables : il passe seulement par les fonctions ci-dessous
+-- (et par la fonction Edge « reserver » pour envoyer une demande),
 -- qui ne renvoient aucune donnée personnelle. Seuls les administrateurs connectés lisent/écrivent les tables.
 do $$ declare t text; begin
   foreach t in array array['maisons','tarifs','chambres','lits','reservations','paiements','sources_ical','reglages','admins'] loop
@@ -229,8 +230,11 @@ end $$;
 
 revoke all on function lits_libres(date, date, text), calendrier_public(date, date),
   demander_reservation(text, text, date, date, bigint, text, text, text, text, text, text) from public;
-grant execute on function lits_libres(date, date, text), calendrier_public(date, date),
-  demander_reservation(text, text, date, date, bigint, text, text, text, text, text, text) to anon, authenticated;
+grant execute on function lits_libres(date, date, text), calendrier_public(date, date) to anon, authenticated;
+-- Les demandes passent obligatoirement par la fonction Edge « reserver » (vérification anti-robot Turnstile),
+-- qui appelle demander_reservation avec la clé serveur : le public ne peut pas l'appeler directement.
+revoke all on function demander_reservation(text, text, date, date, bigint, text, text, text, text, text, text) from anon, authenticated;
+grant execute on function demander_reservation(text, text, date, date, bigint, text, text, text, text, text, text) to service_role;
 revoke all on function libelle_lit(bigint) from public, anon;
 grant execute on function libelle_lit(bigint) to authenticated, service_role;
 -- est_admin() sert aux règles RLS des administrateurs connectés : inutile pour le public.
